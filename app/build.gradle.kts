@@ -87,4 +87,10 @@ dependencies {
     implementation(libs.navigation.ui)
 
     implementation(libs.circleimageview)
+
+    // CameraX
+    implementation(libs.camerax.camera2)
+    implementation(libs.camerax.lifecycle)
+    implementation(libs.camerax.view)
+
 }
