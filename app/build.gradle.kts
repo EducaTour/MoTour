@@ -1,7 +1,8 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.kotlinKSP)
+    alias(libs.plugins.ksp)
+
 }
 
 android {
@@ -51,9 +52,11 @@ dependencies {
     // ViewModel
     implementation(libs.androidx.viewmodel)
     // LiveData
-    implementation (libs.androidx.liveData)
+    implementation(libs.androidx.liveData)
     // Saved state module for ViewModel
     implementation(libs.androidx.savedState)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
     //Annotation processor
     ksp(libs.androidx.anotation)
     // Room
@@ -78,6 +81,10 @@ dependencies {
     implementation(libs.glide)
     // glide compiler
     ksp(libs.glideCompiler)
+//     navigation fragment
+    implementation(libs.navigation.fragment.ktx)
+//     navigation ui
+    implementation(libs.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
