@@ -7,11 +7,9 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "contact_info")
 data class ContactInfo(
-    @SerializedName("email")
-    val email: String?,
     @PrimaryKey
-    @SerializedName("id")
-    val id: Int,
+    @SerializedName("email")
+    val email: String,
     @SerializedName("phone")
     val phone: String?,
     @SerializedName("website")
