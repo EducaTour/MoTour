@@ -9,8 +9,8 @@ import com.dicoding.motour.domain.repository.LandmarkRepository
 
 class LandmarkRepositoryImpl(
     private val landmarkCacheDatasource: LandmarkCacheDatasource,
-    private val landmarkRemoteDatasource: LandmarkRemoteDatasource,
-    private val landmarkLocalDatasource: LandmarkLocalDatasource
+    private val landmarkLocalDatasource: LandmarkLocalDatasource,
+    private val landmarkRemoteDatasource: LandmarkRemoteDatasource
 ) : LandmarkRepository {
     override suspend fun getLandmarkList(): List<Landmark?> {
         return getLandmarkFromCache()
