@@ -22,7 +22,7 @@ class AboutActivity : AppCompatActivity() {
     }
 
     private fun setupEdgeToEdge() {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.iv_back)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btn_back)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets
@@ -30,7 +30,7 @@ class AboutActivity : AppCompatActivity() {
     }
 
     private fun setupClickListener() {
-        binding.ivBack.setOnClickListener {
+        binding.btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
     }
