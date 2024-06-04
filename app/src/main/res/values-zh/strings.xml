@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">MoTour</string>
+    <string name="home">首页</string>
+    <string name="scan">Scan</string>
+    <string name="settings">设置 </string>
+    <string name="language_options">语言选项</string>
+    <string name="indonesia">Bahasa</string>
+    <string name="english">English</string>
+    <string name="china">中文</string>
+    <string name="faq">经常问的问题</string>
+    <string name="faq_camera">为什么我需要允许相机权限?</string>
+    <string name="faq_camera_answer">
+        如果您想用相机扫描地标，则必须允许我们的应用程序使用您设备的相机.
+        \n\n仅当您要拍照时才会访问相机，您可以随时在设备的设置中撤销此访问权限.
+        \n\n更多信息:
+    </string>
+    <string name="faq_camera_hyperlink"><u>https://support.google.com/android/answer/9431959</u></string>
+    <string name="faq_internet">此应用程序需要互联网连接吗？</string>
+    <string name="faq_internet_answer">是的，它确实。
+        \n该应用程序将访问互联网，实现地标扫描功能并获取地标信息和媒体文件的数据.</string>
+    <string name="about">信息</string>
+</resources>

@@ -3,4 +3,20 @@
     <string name="home">Home</string>
     <string name="scan">Scan</string>
     <string name="settings">Settings</string>
+    <string name="language_options">Language Options</string>
+    <string name="indonesia">Bahasa</string>
+    <string name="english">English</string>
+    <string name="china">Chinese</string>
+    <string name="faq">Frequently Asked Questions</string>
+    <string name="faq_camera">Why do I need to allow camera permissions?</string>
+    <string name="faq_camera_answer">
+        If you’d like to scan a landmark with your camera, it is mandatory that you allow our application to use your device’s camera.
+        \n\nThe camera will only be accessed when you’re about to take a picture, you can revoke this access anytime in your device’s settings.
+        \n\nMore information:
+    </string>
+    <string name="faq_camera_hyperlink"><u>https://support.google.com/android/answer/9431959</u></string>
+    <string name="faq_internet">Does this app require internet connection?</string>
+    <string name="faq_internet_answer">Yes, it does.
+        \nThe application will access the internet for landmark scanning feature and data fetching for landmarks information and media files.</string>
+    <string name="about">About</string>
 </resources>
