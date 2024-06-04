@@ -9,15 +9,13 @@ import com.google.gson.annotations.SerializedName
 data class OpeningHours(
     @SerializedName("friday")
     val friday: String?,
-    @PrimaryKey
-    @SerializedName("id")
-    val id: Int,
     @SerializedName("monday")
     val monday: String?,
     @SerializedName("saturday")
     val saturday: String?,
+    @PrimaryKey
     @SerializedName("sunday")
-    val sunday: String?,
+    val sunday: String,
     @SerializedName("thursday")
     val thursday: String?,
     @SerializedName("tuesday")
