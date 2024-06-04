@@ -5,12 +5,12 @@ import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkCach
 import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkLocalDatasource
 import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkRemoteDatasource
 import com.dicoding.motour.domain.repository.LandmarkRepository
+import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
 
+@Module
 class RepositoryModule {
-
-    @Singleton
     @Provides
     fun provideLandmarkRepository(
         landmarkCacheDatasource: LandmarkCacheDatasource,
