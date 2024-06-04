@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -6,6 +9,11 @@ plugins {
 }
 
 android {
+    val secretPropertiesFile = rootProject.file("gradle.properties")
+    val secretProperties = Properties()
+    secretProperties.load(FileInputStream(secretPropertiesFile))
+
+
     namespace = "com.dicoding.motour"
     compileSdk = 34
 
@@ -16,12 +24,15 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "BASE_URL", "\"${secretProperties["BASE_URL"]}\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
