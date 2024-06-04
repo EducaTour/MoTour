@@ -61,6 +61,10 @@ dependencies {
     ksp(libs.androidx.anotation)
     // Room
     implementation(libs.androidx.room)
+    // Room ktx
+    implementation(libs.androidx.room.ktx)
+    // anotation processor for room
+    annotationProcessor(libs.androidx.roomCompiler)
     // To use Kotlin annotation processing tool (ksp)
     ksp(libs.androidx.roomCompiler)
     // Coroutines core
