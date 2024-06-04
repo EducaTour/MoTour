@@ -19,4 +19,7 @@
     <string name="faq_internet_answer">Yes, it does.
         \nThe application will access the internet for landmark scanning feature and data fetching for landmarks information and media files.</string>
     <string name="about">About</string>
+    <string name="camera">Camera</string>
+    <string name="need_camera_permission">You need to allow camera permission to use the scanning feature.</string>
+    <string name="close">Close</string>
 </resources>

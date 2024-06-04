@@ -19,4 +19,7 @@
     <string name="faq_internet_answer">Ya, benar.
         \nAplikasi akan mengakses internet untuk keperluan fitur scanning dan pemuatan data landmark seperti informasi detail dan media.</string>
     <string name="about">Tentang</string>
+    <string name="camera">Kamera</string>
+    <string name="need_camera_permission">Anda perlu mengizinkan akses kamera untuk menggunakan fitur scanning landmark.</string>
+    <string name="close">Tutup</string>
 </resources>

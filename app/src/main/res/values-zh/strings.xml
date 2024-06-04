@@ -19,4 +19,7 @@
     <string name="faq_internet_answer">是的，它确实。
         \n该应用程序将访问互联网，实现地标扫描功能并获取地标信息和媒体文件的数据.</string>
     <string name="about">信息</string>
+    <string name="camera">相机</string>
+    <string name="need_camera_permission">您需要允许相机权限才能使用地标扫描功能.</string>
+    <string name="close">关闭</string>
 </resources>
