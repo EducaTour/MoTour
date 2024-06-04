@@ -22,4 +22,5 @@
     <string name="camera">Camera</string>
     <string name="need_camera_permission">You need to allow camera permission to use the scanning feature.</string>
     <string name="close">Close</string>
+    <string name="educatour">EducaTour</string>
 </resources>

@@ -3,7 +3,7 @@
     <string name="home">Beranda</string>
     <string name="scan">Scan</string>
     <string name="settings">Pengaturan</string>
-    <string name="language_options">Language Options</string>
+    <string name="language_options">Pengaturan Bahasa</string>
     <string name="indonesia">Indonesia</string>
     <string name="english">Inggris</string>
     <string name="china">Cina</string>
@@ -22,4 +22,5 @@
     <string name="camera">Kamera</string>
     <string name="need_camera_permission">Anda perlu mengizinkan akses kamera untuk menggunakan fitur scanning landmark.</string>
     <string name="close">Tutup</string>
+    <string name="educatour">EducaTour</string>
 </resources>
