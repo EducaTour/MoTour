@@ -35,6 +35,7 @@ androidx-liveData = { group = "androidx.lifecycle", name = "lifecycle-livedata-k
 androidx-savedState = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-savedstate", version.ref = "lifecycle_version" }
 androidx-anotation = { group = "androidx.lifecycle", name = "lifecycle-compiler", version.ref = "lifecycle_version" }
 androidx-room = { group = "androidx.room", name = "room-runtime", version.ref = "room_version" }
+androidx-room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room_version" }
 androidx-roomCompiler = { group = "androidx.room", name = "room-compiler", version.ref = "room_version" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines_version" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "coroutines_version" }
