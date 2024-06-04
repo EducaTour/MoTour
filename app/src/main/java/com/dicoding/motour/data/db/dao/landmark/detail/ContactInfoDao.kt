@@ -10,9 +10,9 @@ interface ContactInfoDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(contactInfo: ContactInfo)
 
-    @Query("DELETE FROM contact_info WHERE id = :id")
-    suspend fun deleteAllContactInfo(id: Int)
+    @Query("DELETE FROM contact_info WHERE email = :email")
+    suspend fun deleteAllContactInfo(email: String)
 
-    @Query("SELECT * FROM contact_info WHERE id = :id")
-    suspend fun getContactInfoById(id: Int): ContactInfo
+    @Query("SELECT * FROM contact_info WHERE email = :email")
+    suspend fun getContactInfoById(email: String): ContactInfo
 }

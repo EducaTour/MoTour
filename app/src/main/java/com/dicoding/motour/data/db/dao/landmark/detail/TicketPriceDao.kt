@@ -9,9 +9,9 @@ interface TicketPriceDao {
     @Insert
     suspend fun insert(ticketPrice: TicketPrice)
 
-    @Query("DELETE FROM ticket_price WHERE id = :id")
-    suspend fun deleteAllTicketPrice(id: Int)
+    @Query("DELETE FROM ticket_price WHERE adult = :adult")
+    suspend fun deleteAllTicketPrice(adult: String)
 
-    @Query("SELECT * FROM ticket_price WHERE id = :id")
-    suspend fun getTicketPriceById(id: Int): TicketPrice
+    @Query("SELECT * FROM ticket_price WHERE adult = :adult")
+    suspend fun getTicketPriceById(adult: String): TicketPrice
 }
