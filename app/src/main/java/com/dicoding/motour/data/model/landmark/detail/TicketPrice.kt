@@ -7,13 +7,11 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "ticket_price")
 data class TicketPrice(
+    @PrimaryKey
     @SerializedName("adult")
-    val adult: String?,
+    val adult: String,
     @SerializedName("child")
     val child: String?,
-    @PrimaryKey
-    @SerializedName("id")
-    val id: Int,
     @SerializedName("senior")
     val senior: String?,
     @SerializedName("student")
