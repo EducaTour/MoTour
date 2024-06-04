@@ -1,10 +1,14 @@
 package com.dicoding.motour
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.os.LocaleListCompat
 import androidx.fragment.app.Fragment
+import com.dicoding.motour.databinding.FragmentSettingsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,9 @@ class SettingsFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private var _binding: FragmentSettingsBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -32,9 +39,46 @@ class SettingsFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false)
+        _binding = FragmentSettingsBinding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        setupClickListener()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun setupClickListener() {
+        binding.ivIndonesia.setOnClickListener {
+            val appLocale = LocaleListCompat.forLanguageTags("in")
+            AppCompatDelegate.setApplicationLocales(appLocale)
+        }
+        binding.ivEnglish.setOnClickListener {
+            val appLocale = LocaleListCompat.forLanguageTags("en-US")
+            AppCompatDelegate.setApplicationLocales(appLocale)
+        }
+        binding.ivChina.setOnClickListener {
+            val appLocale = LocaleListCompat.forLanguageTags("zh-Hans")
+            AppCompatDelegate.setApplicationLocales(appLocale)
+        }
+        binding.itemFaq.setOnClickListener {
+            Intent(requireContext(), FaqActivity::class.java).run {
+                startActivity(this)
+            }
+        }
+        binding.itemAbout.setOnClickListener {
+            Intent(requireContext(), AboutActivity::class.java).run {
+                startActivity(this)
+            }
+        }
     }
 
     companion object {
