@@ -16,7 +16,7 @@ class LandmarkRepositoryImpl(
         return getLandmarkFromCache()
     }
 
-    override suspend fun updateLandmarkList(): List<Landmark?> {
+    override suspend fun updateLandmarkList(): List<Landmark> {
         val landmarkList = getLandmarkFromAPI()
         landmarkLocalDatasource.deleteLandmarkFromDB()
         landmarkLocalDatasource.saveLandmarkToDB(landmarkList)
@@ -24,8 +24,8 @@ class LandmarkRepositoryImpl(
         return landmarkList
     }
 
-    private suspend fun getLandmarkFromAPI(): List<Landmark?> {
-        lateinit var landmarkList: List<Landmark?>
+    private suspend fun getLandmarkFromAPI(): List<Landmark> {
+        lateinit var landmarkList: List<Landmark>
         try {
             val response = landmarkRemoteDatasource.getLandmarkList()
             val body = response.body()

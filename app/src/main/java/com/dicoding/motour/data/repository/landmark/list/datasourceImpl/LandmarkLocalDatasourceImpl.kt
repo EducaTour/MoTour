@@ -12,7 +12,7 @@ class LandmarkLocalDatasourceImpl (private val landmarkDao: LandmarkDao) : Landm
         return landmarkDao.getAllLandmark()
     }
 
-    override suspend fun saveLandmarkToDB(landmarkList: List<Landmark?>) {
+    override suspend fun saveLandmarkToDB(landmarkList: List<Landmark>) {
         CoroutineScope(Dispatchers.IO).launch {
             landmarkDao.insert(landmarkList)
         }

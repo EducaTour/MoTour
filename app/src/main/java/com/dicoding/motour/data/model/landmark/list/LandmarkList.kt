@@ -5,5 +5,5 @@ import com.google.gson.annotations.SerializedName
 
 data class LandmarkList(
     @SerializedName("landmarks")
-    val landmarks: List<Landmark?>
+    val landmarks: List<Landmark>
 )
