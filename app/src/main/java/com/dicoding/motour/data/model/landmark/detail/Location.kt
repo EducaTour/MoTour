@@ -7,11 +7,9 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "location")
 data class Location(
-    @SerializedName("address")
-    val address: String?,
     @PrimaryKey
-    @SerializedName("id")
-    val id: Int,
+    @SerializedName("address")
+    val address: String,
     @SerializedName("maps")
     val maps: String?
 )
