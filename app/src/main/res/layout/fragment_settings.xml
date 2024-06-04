@@ -39,75 +39,83 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_one" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_english"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_united_kingdom"
-        app:civ_border_color="@color/inactive_color"
-        app:civ_border_width="0.5dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/language_options_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_language_options" />
+        app:layout_constraintTop_toBottomOf="@id/tv_language_options">
 
-    <TextView
-        android:id="@+id/tv_english"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/english"
-        android:textColor="@color/main_black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/iv_english"
-        app:layout_constraintStart_toStartOf="@id/iv_english"
-        app:layout_constraintTop_toBottomOf="@id/iv_english" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_english"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_united_kingdom"
+            app:civ_border_color="@color/inactive_color"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_indonesia"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="24dp"
-        android:src="@drawable/ic_indonesia"
-        app:civ_border_color="@color/inactive_color"
-        app:civ_border_width="0.5dp"
-        app:layout_constraintStart_toEndOf="@id/iv_english"
-        app:layout_constraintTop_toTopOf="@id/iv_english" />
+        <TextView
+            android:id="@+id/tv_english"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/english"
+            android:textColor="@color/main_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/iv_english"
+            app:layout_constraintStart_toStartOf="@id/iv_english"
+            app:layout_constraintTop_toBottomOf="@id/iv_english" />
 
-    <TextView
-        android:id="@+id/tv_indonesia"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/indonesia"
-        android:textColor="@color/main_black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/iv_indonesia"
-        app:layout_constraintStart_toStartOf="@id/iv_indonesia"
-        app:layout_constraintTop_toBottomOf="@id/iv_indonesia" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_indonesia"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_indonesia"
+            app:civ_border_color="@color/inactive_color"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintStart_toEndOf="@id/iv_english"
+            app:layout_constraintTop_toTopOf="@id/iv_english" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/iv_china"
-        android:layout_width="96dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="24dp"
-        android:src="@drawable/ic_china"
-        app:civ_border_color="@color/inactive_color"
-        app:civ_border_width="0.5dp"
-        app:layout_constraintStart_toEndOf="@id/iv_indonesia"
-        app:layout_constraintTop_toTopOf="@id/iv_english" />
+        <TextView
+            android:id="@+id/tv_indonesia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/indonesia"
+            android:textColor="@color/main_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/iv_indonesia"
+            app:layout_constraintStart_toStartOf="@id/iv_indonesia"
+            app:layout_constraintTop_toBottomOf="@id/iv_indonesia" />
 
-    <TextView
-        android:id="@+id/tv_china"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/china"
-        android:textColor="@color/main_black"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/iv_china"
-        app:layout_constraintStart_toStartOf="@id/iv_china"
-        app:layout_constraintTop_toBottomOf="@id/iv_china" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/iv_china"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="24dp"
+            android:src="@drawable/ic_china"
+            app:civ_border_color="@color/inactive_color"
+            app:civ_border_width="0.5dp"
+            app:layout_constraintStart_toEndOf="@id/iv_indonesia"
+            app:layout_constraintTop_toTopOf="@id/iv_english" />
+
+        <TextView
+            android:id="@+id/tv_china"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/china"
+            android:textColor="@color/main_black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@id/iv_china"
+            app:layout_constraintStart_toStartOf="@id/iv_china"
+            app:layout_constraintTop_toBottomOf="@id/iv_china" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_two"
@@ -117,7 +125,7 @@
         android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_english" />
+        app:layout_constraintTop_toBottomOf="@id/language_options_container" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_faq"
@@ -144,7 +152,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/faq"
             android:textColor="@color/main_black"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/iv_faq"
             app:layout_constraintStart_toEndOf="@id/iv_faq"
             app:layout_constraintTop_toTopOf="@id/iv_faq" />
@@ -195,7 +203,7 @@
             android:layout_marginStart="16dp"
             android:text="@string/about"
             android:textColor="@color/main_black"
-            android:textSize="16sp"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@id/iv_about"
             app:layout_constraintStart_toEndOf="@id/iv_about"
             app:layout_constraintTop_toTopOf="@id/iv_about" />
