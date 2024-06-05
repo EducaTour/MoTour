@@ -18,6 +18,8 @@ class NetModule(private val baseUrl: String) {
             .build()
     }
 
+    @Singleton
+    @Provides
     fun provideEducaTourService(retrofit: Retrofit): EducaTourService {
         return retrofit.create(EducaTourService::class.java)
     }
