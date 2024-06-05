@@ -7,10 +7,10 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface EducaTourService {
-    @GET("landmark")
+    @GET("landmarks")
     suspend fun getLandmarkList(): Response<LandmarkList>
 
-    @GET("landmark/{id}")
+    @GET("landmarks/{id}")
     suspend fun getLandmarkDetail(
         @Query(
             "id"
