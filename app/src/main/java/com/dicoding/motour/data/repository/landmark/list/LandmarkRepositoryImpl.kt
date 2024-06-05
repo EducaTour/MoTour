@@ -25,7 +25,7 @@ class LandmarkRepositoryImpl(
     }
 
     private suspend fun getLandmarkFromAPI(): List<Landmark> {
-        lateinit var landmarkList: List<Landmark>
+        var landmarkList = emptyList<Landmark>()
         try {
             val response = landmarkRemoteDatasource.getLandmarkList()
             val body = response.body()
