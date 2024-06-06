@@ -1,4 +1,4 @@
-package com.dicoding.motour
+package com.dicoding.motour.presentation
 
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -9,7 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
+import com.dicoding.motour.BuildConfig
+import com.dicoding.motour.R
+import com.dicoding.motour.ScanActivity
 import com.dicoding.motour.databinding.ActivityMainBinding
+import com.dicoding.motour.presentation.di.core.AppModule
+import com.dicoding.motour.presentation.di.core.DaggerAppComponent
+import com.dicoding.motour.presentation.di.core.NetModule
+import com.dicoding.motour.presentation.di.core.RemoteDataModule
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
@@ -18,6 +25,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
+
 
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)

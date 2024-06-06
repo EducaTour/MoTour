@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/home_dest"
-        android:name="com.dicoding.motour.HomeFragment"
+        android:name="com.dicoding.motour.presentation.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment

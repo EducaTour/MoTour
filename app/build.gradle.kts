@@ -1,10 +1,19 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
-    alias(libs.plugins.kotlinKSP)
+    alias(libs.plugins.ksp)
+
 }
 
 android {
+    val secretPropertiesFile = rootProject.file("gradle.properties")
+    val secretProperties = Properties()
+    secretProperties.load(FileInputStream(secretPropertiesFile))
+
+
     namespace = "com.dicoding.motour"
     compileSdk = 34
 
@@ -15,12 +24,15 @@ android {
         versionCode = 1
         versionName = "1.0"
 
+        buildConfigField("String", "BASE_URL", "\"${secretProperties["BASE_URL"]}\"")
+
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
+            isShrinkResources = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -51,13 +63,20 @@ dependencies {
     // ViewModel
     implementation(libs.androidx.viewmodel)
     // LiveData
-    implementation (libs.androidx.liveData)
+    implementation(libs.androidx.liveData)
     // Saved state module for ViewModel
     implementation(libs.androidx.savedState)
+    implementation(libs.androidx.legacy.support.v4)
+    implementation(libs.androidx.fragment.ktx)
+    implementation(libs.androidx.databinding.runtime)
     //Annotation processor
     ksp(libs.androidx.anotation)
     // Room
     implementation(libs.androidx.room)
+    // Room ktx
+    implementation(libs.androidx.room.ktx)
+    // anotation processor for room
+    annotationProcessor(libs.androidx.roomCompiler)
     // To use Kotlin annotation processing tool (ksp)
     ksp(libs.androidx.roomCompiler)
     // Coroutines core
@@ -78,13 +97,13 @@ dependencies {
     implementation(libs.glide)
     // glide compiler
     ksp(libs.glideCompiler)
+//     navigation fragment
+    implementation(libs.navigation.fragment.ktx)
+//     navigation ui
+    implementation(libs.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-
-    // Navigation
-    implementation(libs.navigation.fragment)
-    implementation(libs.navigation.ui)
 
     implementation(libs.circleimageview)
 
