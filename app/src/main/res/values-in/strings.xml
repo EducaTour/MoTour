@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">MoTour</string>
+    <string name="home">Beranda</string>
+    <string name="scan">Scan</string>
+    <string name="settings">Pengaturan</string>
+    <string name="language_options">Pengaturan Bahasa</string>
+    <string name="indonesia">Indonesia</string>
+    <string name="english">Inggris</string>
+    <string name="china">Cina</string>
+    <string name="faq">Pertanyaan Umum</string>
+    <string name="faq_camera">Mengapa saya perlu mengizinkan kamera?</string>
+    <string name="faq_camera_answer">
+        Jika anda ingin melakukan scan landmark dengan kamera maka perlu mengizinkan aplikasi untuk mengakses kamera.
+        \n\nKamera hanya akan diakses ketika anda hendak melakukan scan landmark. Anda dapat mengubah hak akses ini kapanpun melalui pengaturan perangkat anda.
+        \n\nInformasi lebih lanjut:
+    </string>
+    <string name="faq_camera_hyperlink"><u>https://support.google.com/android/answer/9431959</u></string>
+    <string name="faq_internet">Apakah aplikasi ini membutuhkan internet?</string>
+    <string name="faq_internet_answer">Ya, benar.
+        \nAplikasi akan mengakses internet untuk keperluan fitur scanning dan pemuatan data landmark seperti informasi detail dan media.</string>
+    <string name="about">Tentang</string>
+    <string name="camera">Kamera</string>
+    <string name="need_camera_permission">Anda perlu mengizinkan akses kamera untuk menggunakan fitur scanning landmark.</string>
+    <string name="close">Tutup</string>
+    <string name="educatour">EducaTour</string>
+</resources>
