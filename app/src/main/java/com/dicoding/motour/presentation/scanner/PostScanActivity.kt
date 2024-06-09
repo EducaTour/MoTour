@@ -1,4 +1,4 @@
-package com.dicoding.motour
+package com.dicoding.motour.presentation.scanner
 
 import android.os.Bundle
 import android.widget.Toast
@@ -8,6 +8,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.dicoding.motour.databinding.ActivityPostScanBinding
+import com.dicoding.motour.presentation.scanner.ScanActivity
 
 class PostScanActivity : AppCompatActivity() {
 

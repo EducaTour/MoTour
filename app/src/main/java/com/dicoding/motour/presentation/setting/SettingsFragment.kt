@@ -1,4 +1,4 @@
-package com.dicoding.motour
+package com.dicoding.motour.presentation.setting
 
 import android.content.Intent
 import android.os.Bundle
@@ -42,8 +42,7 @@ class SettingsFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         _binding = FragmentSettingsBinding.inflate(inflater, container, false)
-        val view = binding.root
-        return view
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
