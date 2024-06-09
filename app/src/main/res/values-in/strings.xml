@@ -23,4 +23,5 @@
     <string name="need_camera_permission">Anda perlu mengizinkan akses kamera untuk menggunakan fitur scanning landmark.</string>
     <string name="close">Tutup</string>
     <string name="educatour">EducaTour</string>
+    <string name="about_us">Tentang Kami</string>
 </resources>
