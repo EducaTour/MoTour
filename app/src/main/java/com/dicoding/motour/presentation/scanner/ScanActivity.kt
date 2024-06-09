@@ -1,4 +1,4 @@
-package com.dicoding.motour
+package com.dicoding.motour.presentation.scanner
 
 import android.content.ContentValues
 import android.content.Intent
