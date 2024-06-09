@@ -19,16 +19,16 @@
         android:theme="@style/Theme.MoTour"
         tools:targetApi="31">
         <activity
-            android:name=".PostScanActivity"
+            android:name=".presentation.scanner.PostScanActivity"
             android:exported="false" />
         <activity
-            android:name=".AboutActivity"
+            android:name=".presentation.setting.AboutActivity"
             android:exported="false" />
         <activity
-            android:name=".FaqActivity"
+            android:name=".presentation.setting.FaqActivity"
             android:exported="false" />
         <activity
-            android:name=".ScanActivity"
+            android:name=".presentation.scanner.ScanActivity"
             android:exported="false" />
         <activity
             android:name=".presentation.MainActivity"
