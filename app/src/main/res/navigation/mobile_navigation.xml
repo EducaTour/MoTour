@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/settings_dest"
-        android:name="com.dicoding.motour.SettingsFragment"
+        android:name="com.dicoding.motour.presentation.setting.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
 </navigation>
