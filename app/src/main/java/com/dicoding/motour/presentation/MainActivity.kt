@@ -1,31 +1,86 @@
 package com.dicoding.motour.presentation
 
+import android.content.Intent
+import android.content.pm.PackageManager
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
-import androidx.fragment.app.commit
+import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupWithNavController
 import com.dicoding.motour.R
-import com.dicoding.motour.presentation.home.HomeFragment
+import com.dicoding.motour.databinding.ActivityMainBinding
+import com.dicoding.motour.presentation.scanner.ScanActivity
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
 
-        // Add HomeFragment to the activity
-        if (savedInstanceState == null) {
-            supportFragmentManager.commit {
-                replace(R.id.fragment_container, HomeFragment.newInstance())
+    private lateinit var binding: ActivityMainBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
+
+
+        super.onCreate(savedInstanceState)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        setupClickListener()
+
+        val host =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_container) as NavHostFragment
+        val navController = host.navController
+
+        binding.bottomNav.setupWithNavController(navController)
+        binding.bottomNav.menu.getItem(1).isEnabled = false
+        binding.bottomNav.itemIconTintList = null
+    }
+
+    private fun setupClickListener() {
+        binding.ivScan.setOnClickListener {
+            if (!checkPermission(CAMERA_PERMISSION)) {
+                cameraPermissionLauncher.launch(CAMERA_PERMISSION)
+            } else {
+                performScan()
             }
         }
+    }
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
+    private fun performScan() {
+        Intent(this, ScanActivity::class.java).run {
+            startActivity(this)
         }
+    }
+
+    private fun showNeedCameraPermissionDialog() {
+        MaterialAlertDialogBuilder(this)
+            .setTitle(getString(R.string.camera))
+            .setMessage(getString(R.string.need_camera_permission))
+            .setPositiveButton(getString(R.string.close)) { _, _ ->
+                closeOptionsMenu()
+            }
+            .show()
+    }
+
+    private fun checkPermission(permission: String): Boolean {
+        return ContextCompat.checkSelfPermission(
+            this,
+            permission
+        ) == PackageManager.PERMISSION_GRANTED
+    }
+
+    private val cameraPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { isGranted ->
+        if (isGranted) {
+            performScan()
+        } else {
+            showNeedCameraPermissionDialog()
+        }
+    }
+
+    companion object {
+        private const val CAMERA_PERMISSION = android.Manifest.permission.CAMERA
     }
 }

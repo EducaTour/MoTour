@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
 import com.dicoding.motour.R
+import com.dicoding.motour.databinding.FragmentHomeBinding
 import com.dicoding.motour.presentation.di.Injector
 import javax.inject.Inject
 
@@ -41,9 +42,5 @@ class HomeFragment : Fragment() {
             Log.i("MYTAG", landmarkList.toString())
         }
 
-        // Set up button click listener
-        view.findViewById<Button>(R.id.button_example).setOnClickListener {
-            Log.i("MYTAG", "Button was clicked!")
-        }
     }
 }
