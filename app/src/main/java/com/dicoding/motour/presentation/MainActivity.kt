@@ -9,14 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
-import com.dicoding.motour.BuildConfig
 import com.dicoding.motour.R
-import com.dicoding.motour.ScanActivity
 import com.dicoding.motour.databinding.ActivityMainBinding
-import com.dicoding.motour.presentation.di.core.AppModule
-import com.dicoding.motour.presentation.di.core.DaggerAppComponent
-import com.dicoding.motour.presentation.di.core.NetModule
-import com.dicoding.motour.presentation.di.core.RemoteDataModule
+import com.dicoding.motour.presentation.scanner.ScanActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class MainActivity : AppCompatActivity() {
