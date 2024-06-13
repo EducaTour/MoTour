@@ -10,6 +10,7 @@ import com.dicoding.motour.data.model.landmark.list.Landmark
 interface LandmarkDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(landmark: List<Landmark>)
+
     @Query("DELETE FROM landmark")
     suspend fun deleteAllLandmark()
 

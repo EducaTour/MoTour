@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.dicoding.motour.domain.usecase.GetLandmarkByIdUseCase
 import com.dicoding.motour.domain.usecase.UpdateLandmarkByIdUseCase
-import com.dicoding.motour.domain.usecase.UpdateLandmarkListUsecase
 
 class LandmarkDetailViewModel(
     private val getLandmarkByIdUseCase: GetLandmarkByIdUseCase,
