@@ -6,13 +6,16 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverters
 import com.dicoding.motour.data.db.StringListConverter
-import com.dicoding.motour.data.model.StringList
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "landmark_detail")
 data class LandmarkDetail(
-    @SerializedName("contact_info")
-    @Embedded val contactInfo: ContactInfo?,
+    @PrimaryKey
+    @SerializedName("id")
+    val id: Int,
+
+    @SerializedName("name")
+    val name: String?,
 
     @SerializedName("description")
     val description: String?,
@@ -20,27 +23,28 @@ data class LandmarkDetail(
     @SerializedName("history")
     val history: String?,
 
-    @PrimaryKey
-    @SerializedName("id")
-    val id: Int,
-
-    @SerializedName("images")
-    @TypeConverters(StringListConverter::class)
-    val images: StringList?,
-
     @SerializedName("location")
     @Embedded val location: Location?,
 
-    @SerializedName("name")
-    val name: String?,
+    @SerializedName("photos")
+    @TypeConverters(StringListConverter::class)
+    val photos: List<String?>,
+
+    @SerializedName("unique_activities")
+    @TypeConverters(StringListConverter::class)
+    val uniqueActivities: List<String?>,
 
     @SerializedName("opening_hours")
     @Embedded val openingHours: OpeningHours?,
 
-    @SerializedName("ticket_price")
+    @SerializedName("ticket_prices")
     @Embedded val ticketPrice: TicketPrice?,
 
-    @SerializedName("unique_activities")
-    @TypeConverters(StringListConverter::class)
-    val uniqueActivities: StringList?
+    @SerializedName("contact_info")
+    @Embedded val contactInfo: ContactInfo?,
+)
+
+data class LandmarkDetailData(
+    @SerializedName("landmark")
+    val landmark: LandmarkDetail
 )
