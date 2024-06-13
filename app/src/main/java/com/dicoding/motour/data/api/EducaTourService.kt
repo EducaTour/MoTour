@@ -1,10 +1,10 @@
 package com.dicoding.motour.data.api
 
-import com.dicoding.motour.data.model.landmark.detail.LandmarkDetailList
+import com.dicoding.motour.data.model.landmark.detail.LandmarkDetailData
 import com.dicoding.motour.data.model.landmark.list.LandmarkList
 import retrofit2.Response
 import retrofit2.http.GET
-import retrofit2.http.Query
+import retrofit2.http.Path
 
 interface EducaTourService {
     @GET("landmarks")
@@ -12,8 +12,8 @@ interface EducaTourService {
 
     @GET("landmarks/{id}")
     suspend fun getLandmarkDetail(
-        @Query(
+        @Path(
             "id"
         ) id: Int
-    ): Response<LandmarkDetailList>
+    ): Response<LandmarkDetailData>
 }
