@@ -1,14 +1,15 @@
 package com.dicoding.motour.presentation
 
 import android.app.Application
+import com.dicoding.motour.BuildConfig
 import com.dicoding.motour.presentation.di.Injector
 import com.dicoding.motour.presentation.di.core.AppComponent
 import com.dicoding.motour.presentation.di.core.AppModule
+import com.dicoding.motour.presentation.di.core.DaggerAppComponent
 import com.dicoding.motour.presentation.di.core.NetModule
 import com.dicoding.motour.presentation.di.core.RemoteDataModule
 import com.dicoding.motour.presentation.di.home.HomeSubComponent
-import com.dicoding.motour.BuildConfig
-import com.dicoding.motour.presentation.di.core.DaggerAppComponent
+import com.dicoding.motour.presentation.di.landmark.LandmarkSubComponent
 
 class App : Application(), Injector {
     private lateinit var appComponent: AppComponent
@@ -21,7 +22,12 @@ class App : Application(), Injector {
             .remoteDataModule(RemoteDataModule())
             .build()
     }
+
     override fun createHomeSubComponent(): HomeSubComponent {
         return appComponent.homeSubComponent().create()
+    }
+
+    override fun createLandmarkSubComponent(): LandmarkSubComponent {
+        return appComponent.landmarkSubComponent().create()
     }
 }
