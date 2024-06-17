@@ -195,7 +195,7 @@
         android:layout_height="48dp"
         android:layout_marginBottom="16dp"
         android:fontFamily="@font/ppmori_regular"
-        android:text="Back"
+        android:text="@string/back"
         android:textColor="@color/main_white"
         android:textStyle="bold"
         app:backgroundTint="@color/main_gray"

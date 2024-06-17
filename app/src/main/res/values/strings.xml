@@ -24,4 +24,6 @@
     <string name="close">Close</string>
     <string name="educatour">EducaTour</string>
     <string name="about_us">About Us</string>
+    <string name="back">Back</string>
+    <string name="retry">Retry</string>
 </resources>
