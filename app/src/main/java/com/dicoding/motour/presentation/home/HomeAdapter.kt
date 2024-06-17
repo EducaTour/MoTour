@@ -3,6 +3,7 @@ package com.dicoding.motour.presentation.home
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.dicoding.motour.data.model.landmark.list.Landmark
 import com.dicoding.motour.databinding.ItemLandmarkBinding
 
@@ -16,6 +17,9 @@ class HomeAdapter :
         fun bind(entry: Landmark) {
             with(binding) {
                 tvLandmarkName.text = entry.name
+                Glide.with(binding.root)
+                    .load(entry.photo)
+                    .into(ivItemLandmark)
             }
         }
     }
