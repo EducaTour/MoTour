@@ -1,6 +1,5 @@
 package com.dicoding.motour.domain.repository
 
-import com.dicoding.motour.data.model.landmark.detail.LandmarkDetail
 import com.dicoding.motour.data.model.landmark.list.Landmark
 
 interface LandmarkRepository {

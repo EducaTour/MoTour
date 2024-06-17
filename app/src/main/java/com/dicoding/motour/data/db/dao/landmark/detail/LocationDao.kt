@@ -1,10 +1,10 @@
 package com.dicoding.motour.data.db.dao.landmark.detail
+
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import com.dicoding.motour.data.model.landmark.detail.Location
-import java.net.Inet4Address
 
 @Dao
 interface LocationDao {

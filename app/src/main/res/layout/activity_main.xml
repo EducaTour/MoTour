@@ -36,6 +36,8 @@
         android:elevation="0dp"
         app:backgroundTint="@android:color/transparent"
         app:elevation="0dp"
+        app:itemTextAppearanceActive="@style/BottomNavigationViewTextStyle"
+        app:itemTextAppearanceInactive="@style/BottomNavigationViewTextStyle"
         app:itemTextColor="@color/main_state"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"

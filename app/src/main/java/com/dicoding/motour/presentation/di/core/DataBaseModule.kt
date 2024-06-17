@@ -22,10 +22,6 @@ class DataBaseModule {
 
     @Singleton
     @Provides
-    fun provideLandmarkDetailDao(educaTourDB: EducaTourDB) = educaTourDB.landmarkDetailDao()
-
-    @Singleton
-    @Provides
     fun provideLocationDao(educaTourDB: EducaTourDB) = educaTourDB.locationDao()
 
     @Singleton
