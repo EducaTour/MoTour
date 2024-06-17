@@ -2,7 +2,6 @@ package com.dicoding.motour.presentation.home
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,11 +9,13 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dicoding.motour.data.model.landmark.list.Landmark
 import com.dicoding.motour.databinding.FragmentHomeBinding
 import com.dicoding.motour.presentation.di.Injector
 import com.dicoding.motour.presentation.landmark.LandmarkDetailActivity
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class HomeFragment : Fragment() {
@@ -61,14 +62,18 @@ class HomeFragment : Fragment() {
             rvLandmark.setHasFixedSize(true)
         }
 
-        viewModel.getLandmarkList().observe(viewLifecycleOwner) {
+        fetchLandmarkList()
+
+        viewModel.landmarkList.observe(viewLifecycleOwner) {
             when (it) {
                 is HomeViewModel.LandmarkListState.Loading -> {
-                    setLoading(true)
+                    showLoading(true)
+                    showError(false)
                 }
 
                 is HomeViewModel.LandmarkListState.Result -> {
-                    setLoading(false)
+                    showLoading(false)
+                    showError(false)
 
                     val landmarkList = it.landmarkList
 
@@ -84,18 +89,37 @@ class HomeFragment : Fragment() {
                             }
                         }
                     })
+                }
 
-                    Log.d("MYTAG", landmarkList.toString())
+                is HomeViewModel.LandmarkListState.Error -> {
+                    showLoading(false)
+                    showError(true)
                 }
             }
         }
+
+        binding.btnRetry.setOnClickListener {
+            fetchLandmarkList()
+        }
     }
 
-    private fun setLoading(state: Boolean) {
-        if (state) {
-            binding.progressIndicator.visibility = View.VISIBLE
-        } else {
-            binding.progressIndicator.visibility = View.GONE
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
+
+    private fun fetchLandmarkList() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.getLandmarkList()
         }
+    }
+
+    private fun showLoading(state: Boolean) {
+        binding.progressIndicator.visibility = if (state) View.VISIBLE else View.GONE
+    }
+
+    private fun showError(state: Boolean) {
+        binding.ivError.visibility = if (state) View.VISIBLE else View.GONE
+        binding.btnRetry.visibility = if (state) View.VISIBLE else View.GONE
     }
 }

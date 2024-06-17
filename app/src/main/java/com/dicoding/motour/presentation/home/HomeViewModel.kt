@@ -1,5 +1,7 @@
 package com.dicoding.motour.presentation.home
 
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.dicoding.motour.data.model.landmark.list.Landmark
@@ -10,15 +12,26 @@ class HomeViewModel(
     private val getLandmarkListUseCase: GetLandmarkListUseCase,
     private val updateLandmarkListUsecase: UpdateLandmarkListUsecase
 ) : ViewModel() {
+    private val _data = MutableLiveData<Any>()
+    val landmarkList: LiveData<Any> get() = _data
+
     sealed class LandmarkListState<out R> {
         data object Loading : LandmarkListState<Nothing>()
-        data class Result<out T>(val landmarkList: T) : LandmarkListState<T>()
+        data class Result(val landmarkList: List<Landmark?>?) :
+            LandmarkListState<List<Landmark?>?>()
+
+        data class Error(val error: String) : LandmarkListState<String>()
     }
 
-    fun getLandmarkList() = liveData {
-        emit(LandmarkListState.Loading)
-        val landmarkList = getLandmarkListUseCase.execute()
-        emit(LandmarkListState.Result<List<Landmark?>?>(landmarkList))
+    suspend fun getLandmarkList() {
+        var landmarkList: List<Landmark?>? = null
+        _data.value = LandmarkListState.Loading
+        try {
+            landmarkList = getLandmarkListUseCase.execute()
+            _data.value = LandmarkListState.Result(landmarkList)
+        } catch (e: Exception) {
+            _data.value = LandmarkListState.Error(e.message.toString())
+        }
     }
 
     fun updateLandmarkList() = liveData {

@@ -104,18 +104,14 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_container" />
 
-    <ScrollView
-        android:id="@+id/container_rv"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_landmark"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/header_container">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_landmark"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-    </ScrollView>
+        app:layout_constraintTop_toBottomOf="@id/divider_one" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progress_indicator"
@@ -128,5 +124,30 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/header_container" />
+
+    <ImageView
+        android:id="@+id/iv_error"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header_container"
+        android:src="@drawable/image_error"
+        android:visibility="invisible"
+        android:layout_marginBottom="64dp"/>
+
+    <Button
+        android:id="@+id/btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/iv_error"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/ppmori_regular"
+        android:textColor="@color/main_white"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:text="@string/retry"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
