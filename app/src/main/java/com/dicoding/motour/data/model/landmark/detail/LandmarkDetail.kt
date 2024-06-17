@@ -4,8 +4,6 @@ package com.dicoding.motour.data.model.landmark.detail
 import androidx.room.Embedded
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import androidx.room.TypeConverters
-import com.dicoding.motour.data.db.StringListConverter
 import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "landmark_detail")
@@ -27,11 +25,9 @@ data class LandmarkDetail(
     @Embedded val location: Location?,
 
     @SerializedName("photos")
-    @TypeConverters(StringListConverter::class)
     val photos: List<String?>,
 
     @SerializedName("unique_activities")
-    @TypeConverters(StringListConverter::class)
     val uniqueActivities: List<String?>,
 
     @SerializedName("opening_hours")

@@ -20,11 +20,6 @@ class DataBaseModule {
     @Provides
     fun provideContactInfoDao(educaTourDB: EducaTourDB) = educaTourDB.contactInfoDao()
 
-    /*
-    @Singleton
-    @Provides
-    fun provideLandmarkDetailDao(educaTourDB: EducaTourDB) = educaTourDB.landmarkDetailDao()
-    */
     @Singleton
     @Provides
     fun provideLocationDao(educaTourDB: EducaTourDB) = educaTourDB.locationDao()
