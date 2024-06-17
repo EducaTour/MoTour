@@ -21,13 +21,12 @@ class LandmarkDetailRepositoryImpl(
         var landmark: LandmarkDetail? = null
         try {
             val response = landmarkDetailRemoteDatasource.getLandmarkDetail(id)
-            Log.d("LandmarkDetailRepositoryImpl", response.raw().toString())
             val body = response.body()
             if (body != null) {
                 landmark = body.landmark
             }
         } catch (e: Exception) {
-            Log.d("LandmarkDetailRepositoryImpl", e.message.toString())
+
         }
         return landmark
     }
