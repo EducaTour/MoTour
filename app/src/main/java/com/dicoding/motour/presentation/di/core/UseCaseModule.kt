@@ -2,8 +2,10 @@ package com.dicoding.motour.presentation.di.core
 
 import com.dicoding.motour.domain.repository.LandmarkDetailRepository
 import com.dicoding.motour.domain.repository.LandmarkRepository
+import com.dicoding.motour.domain.repository.ScannerRepository
 import com.dicoding.motour.domain.usecase.GetLandmarkByIdUseCase
 import com.dicoding.motour.domain.usecase.GetLandmarkListUseCase
+import com.dicoding.motour.domain.usecase.GetScannerUseCase
 import com.dicoding.motour.domain.usecase.UpdateLandmarkByIdUseCase
 import com.dicoding.motour.domain.usecase.UpdateLandmarkListUsecase
 import dagger.Module
@@ -30,5 +32,10 @@ class UseCaseModule {
     @Provides
     fun provideUpdateLandmarkByIdUseCase(landmarkDetailRepository: LandmarkDetailRepository): UpdateLandmarkByIdUseCase {
         return UpdateLandmarkByIdUseCase(landmarkDetailRepository)
+    }
+
+    @Provides
+    fun provideGetScannerUseCase(scannerRepository: ScannerRepository): GetScannerUseCase {
+        return GetScannerUseCase(scannerRepository)
     }
 }
