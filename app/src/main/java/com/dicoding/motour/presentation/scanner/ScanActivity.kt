@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.view.OrientationEventListener
 import android.view.Surface
 import android.widget.Toast
@@ -165,13 +164,12 @@ class ScanActivity : AppCompatActivity() {
             ContextCompat.getMainExecutor(this),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onError(exc: ImageCaptureException) {
-                    Log.e(TAG, "Photo capture failed: ${exc.message}", exc)
+                    Toast.makeText(baseContext, "Photo capture failed", Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
                     val msg = "Photo capture succeeded: ${output.savedUri}"
                     Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
-                    Log.d(TAG, msg)
                     chosenImageUri = output.savedUri.toString()
                     afterScan()
                 }
@@ -196,19 +194,17 @@ class ScanActivity : AppCompatActivity() {
         }
     }
 
-    val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+    private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         if (uri != null) {
-            Log.d("PhotoPicker", "Selected URI: $uri")
             chosenImageUri = uri.toString()
             afterScan()
         } else {
-            Log.d("PhotoPicker", "No media selected")
+            Toast.makeText(this, "No media selected", Toast.LENGTH_SHORT).show()
         }
     }
 
     companion object {
         private const val FILENAME_FORMAT = "yyyy-MM-dd-HH-mm-ss-SSS"
-        private const val TAG = "ScanActivity"
 
         const val EXTRA_SCAN_URI = "EXTRA_SCAN_URI"
         const val EXTRA_SCAN_STATUS_CODE = "EXTRA_SCAN_STATUS_CODE"
