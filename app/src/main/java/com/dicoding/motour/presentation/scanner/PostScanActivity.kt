@@ -1,5 +1,6 @@
 package com.dicoding.motour.presentation.scanner
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -8,7 +9,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.bumptech.glide.Glide
 import com.dicoding.motour.databinding.ActivityPostScanBinding
-import com.dicoding.motour.presentation.scanner.ScanActivity
+import com.dicoding.motour.presentation.landmark.LandmarkDetailActivity
 
 class PostScanActivity : AppCompatActivity() {
 
@@ -37,6 +38,13 @@ class PostScanActivity : AppCompatActivity() {
     private fun setupClickListener() {
         binding.btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
+        }
+        binding.btnTest.setOnClickListener {
+            Intent(this, LandmarkDetailActivity::class.java).apply {
+                putExtra(LandmarkDetailActivity.EXTRA_LANDMARK_ID, 1)
+            }.run {
+                startActivity(this)
+            }
         }
     }
 

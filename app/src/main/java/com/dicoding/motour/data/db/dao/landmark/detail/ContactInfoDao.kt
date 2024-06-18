@@ -1,4 +1,5 @@
 package com.dicoding.motour.data.db.dao.landmark.detail
+
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy

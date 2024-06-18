@@ -7,7 +7,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class LandmarkLocalDatasourceImpl (private val landmarkDao: LandmarkDao) : LandmarkLocalDatasource {
+class LandmarkLocalDatasourceImpl(private val landmarkDao: LandmarkDao) : LandmarkLocalDatasource {
     override suspend fun getLandmarkFromDB(): List<Landmark?> {
         return landmarkDao.getAllLandmark()
     }

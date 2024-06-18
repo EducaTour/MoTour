@@ -5,7 +5,6 @@ import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkLoca
 import com.dicoding.motour.data.repository.landmark.list.datasourceImpl.LandmarkLocalDatasourceImpl
 import dagger.Module
 import dagger.Provides
-import javax.inject.Singleton
 
 @Module
 class LocalDataModule {
