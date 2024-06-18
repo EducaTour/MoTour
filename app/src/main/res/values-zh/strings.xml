@@ -24,4 +24,6 @@
     <string name="close">关闭</string>
     <string name="educatour">EducaTour</string>
     <string name="about_us">关于我们</string>
+    <string name="back">返回</string>
+    <string name="retry">刷新</string>
 </resources>

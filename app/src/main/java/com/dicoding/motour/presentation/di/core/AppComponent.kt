@@ -2,6 +2,7 @@ package com.dicoding.motour.presentation.di.core
 
 import com.dicoding.motour.presentation.di.home.HomeSubComponent
 import com.dicoding.motour.presentation.di.scanner.ScannerSubComponent
+import com.dicoding.motour.presentation.di.landmark.LandmarkSubComponent
 import dagger.Component
 import javax.inject.Singleton
 
@@ -21,4 +22,5 @@ import javax.inject.Singleton
 interface AppComponent {
         fun homeSubComponent(): HomeSubComponent.Factory
         fun scannerSubComponent(): ScannerSubComponent.Factory
+        fun landmarkSubComponent(): LandmarkSubComponent.Factory
 }

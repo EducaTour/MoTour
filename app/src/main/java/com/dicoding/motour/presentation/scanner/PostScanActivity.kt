@@ -2,6 +2,7 @@ package com.dicoding.motour.presentation.scanner
 
 import android.net.Uri
 import android.os.Build
+import android.content.Intent
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
@@ -24,6 +25,7 @@ import com.dicoding.motour.utils.reduceFileImage
 import com.dicoding.motour.utils.uriToFile
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import com.dicoding.motour.presentation.landmark.LandmarkDetailActivity
 
 class PostScanActivity : AppCompatActivity() {
 

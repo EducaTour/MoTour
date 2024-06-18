@@ -6,6 +6,7 @@
     <color name="main_white">#F6F9FB</color>
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#3199FF</color>
+    <color name="blue_darker">#206EE3</color>
     <color name="inactive_color">#8E9093</color>
     <color name="orange">#e5a673</color>
     <color name="yellow">#d2b300</color>

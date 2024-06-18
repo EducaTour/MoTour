@@ -24,4 +24,6 @@
     <string name="close">Tutup</string>
     <string name="educatour">EducaTour</string>
     <string name="about_us">Tentang Kami</string>
+    <string name="back">Kembali</string>
+    <string name="retry">Muat Ulang</string>
 </resources>

@@ -26,7 +26,8 @@
         android:src="@drawable/ic_ios_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        android:contentDescription="@string/post_image" />
 
     <ImageView
         android:id="@+id/iv_landmark"
@@ -35,7 +36,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/post_image" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/btn_scan"

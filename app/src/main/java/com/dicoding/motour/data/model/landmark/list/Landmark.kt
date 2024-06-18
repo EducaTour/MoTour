@@ -10,8 +10,8 @@ data class Landmark(
     @PrimaryKey
     @SerializedName("id")
     val id: Int,
-    @SerializedName("images")
-    val images: String?,
+    @SerializedName("photo")
+    val photo: String?,
     @SerializedName("name")
     val name: String?
 )
