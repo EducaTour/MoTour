@@ -53,6 +53,9 @@
     <string name="visiting_information"><u>Visiting Information</u></string>
     <string name="contact_information"><u>Contact Information</u></string>
     <string name="google_maps"><u>Google Maps</u></string>
+    <string name="foreigner">Foreigner</string>
+    <string name="regular">Regular</string>
+    <string name="packages">Packages</string>
     <string name="child">Child</string>
     <string name="adult">Adult</string>
     <string name="sun">Sunday</string>
@@ -67,4 +70,5 @@
     <string name="web">Web</string>
     <string name="application_restart">Application Restart</string>
     <string name="application_will_now_restart_to_change_the_preferred_language">Application will now restart to change the preferred language.</string>
+    <string name="student">Student</string>
 </resources>

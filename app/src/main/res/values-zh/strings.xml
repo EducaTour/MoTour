@@ -66,4 +66,8 @@
     <string name="furthermore">细节</string>
     <string name="application_restart">应用程序重启</string>
     <string name="application_will_now_restart_to_change_the_preferred_language">应用程序现在将重新启动以更改首选语言。</string>
+    <string name="foreigner">老外</string>
+    <string name="regular">正常</string>
+    <string name="packages">包裹</string>
+    <string name="student">Student</string>
 </resources>
