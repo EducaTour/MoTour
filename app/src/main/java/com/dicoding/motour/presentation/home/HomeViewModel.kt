@@ -33,9 +33,4 @@ class HomeViewModel(
             _data.value = LandmarkListState.Error(e.message.toString())
         }
     }
-
-    fun updateLandmarkList() = liveData {
-        val landmarkList = updateLandmarkListUsecase.execute()
-        emit(landmarkList)
-    }
 }

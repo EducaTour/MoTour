@@ -226,11 +226,13 @@ class LandmarkDetailActivity : AppCompatActivity() {
     private fun showError(state: Boolean) {
         binding.ivError.visibility = if (state) View.VISIBLE else View.GONE
         binding.btnRetry.visibility = if (state) View.VISIBLE else View.GONE
-        Toast.makeText(
-            this,
-            getString(R.string.network_error),
-            Toast.LENGTH_SHORT
-        ).show()
+        if (state) {
+            Toast.makeText(
+                this,
+                getString(R.string.network_error),
+                Toast.LENGTH_SHORT
+            ).show()
+        }
     }
 
     companion object {
