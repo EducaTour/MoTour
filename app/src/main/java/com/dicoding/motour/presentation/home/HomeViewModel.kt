@@ -1,5 +1,6 @@
 package com.dicoding.motour.presentation.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -7,6 +8,7 @@ import androidx.lifecycle.liveData
 import com.dicoding.motour.data.model.landmark.list.Landmark
 import com.dicoding.motour.domain.usecase.GetLandmarkListUseCase
 import com.dicoding.motour.domain.usecase.UpdateLandmarkListUsecase
+import java.net.UnknownHostException
 
 class HomeViewModel(
     private val getLandmarkListUseCase: GetLandmarkListUseCase,
@@ -30,7 +32,11 @@ class HomeViewModel(
             landmarkList = getLandmarkListUseCase.execute()
             _data.value = LandmarkListState.Result(landmarkList)
         } catch (e: Exception) {
-            _data.value = LandmarkListState.Error(e.message.toString())
+            e.cause?.javaClass?.let {
+                if (it.name == "java.net.UnknownHostException") {
+                    _data.value = LandmarkListState.Error(it.name)
+                }
+            }
         }
     }
 }
