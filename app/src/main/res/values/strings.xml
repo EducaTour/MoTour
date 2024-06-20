@@ -65,4 +65,6 @@
     <string name="phone">Phone\t\t:</string>
     <string name="email">Email\t\t\t:</string>
     <string name="web">Web\t\t\t\t:</string>
+    <string name="application_restart">Application Restart</string>
+    <string name="application_will_now_restart_to_change_the_preferred_language">Application will now restart to change the preferred language.</string>
 </resources>

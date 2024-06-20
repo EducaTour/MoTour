@@ -64,4 +64,6 @@
     <string name="rate">100%</string>
     <string name="landmark_name">landmark name</string>
     <string name="furthermore">细节</string>
+    <string name="application_restart">应用程序重启</string>
+    <string name="application_will_now_restart_to_change_the_preferred_language">应用程序现在将重新启动以更改首选语言。</string>
 </resources>

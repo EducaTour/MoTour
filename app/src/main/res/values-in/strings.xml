@@ -63,4 +63,6 @@
     <string name="rate">100%</string>
     <string name="landmark_name">landmark name</string>
     <string name="furthermore">Lebih Lanjut</string>
+    <string name="application_restart">Restart Aplikasi</string>
+    <string name="application_will_now_restart_to_change_the_preferred_language">Aplikasi akan restart untuk mengganti bahasa.</string>
 </resources>
