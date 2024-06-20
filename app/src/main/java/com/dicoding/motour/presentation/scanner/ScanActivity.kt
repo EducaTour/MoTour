@@ -196,6 +196,10 @@ class ScanActivity : AppCompatActivity() {
 
     private val pickMedia = registerForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
         if (uri != null) {
+            contentResolver.takePersistableUriPermission(
+                uri,
+                Intent.FLAG_GRANT_READ_URI_PERMISSION
+            )
             chosenImageUri = uri.toString()
             afterScan()
         } else {
