@@ -69,5 +69,9 @@
     <string name="foreigner">老外</string>
     <string name="regular">正常</string>
     <string name="packages">包裹</string>
-    <string name="student">Student</string>
+    <string name="student">学生</string>
+    <string name="unrecognized_landmark">未被承认的地标！</string>
+    <string name="network_error">网络错误</string>
+    <string name="unknown_error">出现未知错误</string>
+    <string name="image_captured">捕获并保存图像></string>
 </resources>

@@ -71,4 +71,8 @@
     <string name="application_restart">Application Restart</string>
     <string name="application_will_now_restart_to_change_the_preferred_language">Application will now restart to change the preferred language.</string>
     <string name="student">Student</string>
+    <string name="unrecognized_landmark">Unrecognized Landmark!</string>
+    <string name="network_error">Network Error</string>
+    <string name="unknown_error">An unknown error occurred</string>
+    <string name="image_captured">Image captured and saved</string>
 </resources>

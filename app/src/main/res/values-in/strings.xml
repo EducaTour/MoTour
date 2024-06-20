@@ -68,5 +68,9 @@
     <string name="furthermore">Lebih Lanjut</string>
     <string name="application_restart">Restart Aplikasi</string>
     <string name="application_will_now_restart_to_change_the_preferred_language">Aplikasi akan restart untuk mengganti bahasa.</string>
-    <string name="student">Student</string>
+    <string name="student">Pelajar</string>
+    <string name="unrecognized_landmark">Landmark Tidak Dikenal!</string>
+    <string name="network_error">Koneksi Internet Error</string>
+    <string name="unknown_error">Sebuah Kesalahan Tidak Dikenal Terjadi</string>
+    <string name="image_captured">Gambar Terambil dan Tersimpan</string>
 </resources>
