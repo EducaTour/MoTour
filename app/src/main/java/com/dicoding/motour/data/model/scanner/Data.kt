@@ -7,7 +7,7 @@ data class Data(
     @SerializedName("created_at")
     val createdAt: String,
     @SerializedName("id")
-    val id: String,
+    val id: Int,
     @SerializedName("landMarkId")
     val landMarkId: String,
     @SerializedName("rate")
