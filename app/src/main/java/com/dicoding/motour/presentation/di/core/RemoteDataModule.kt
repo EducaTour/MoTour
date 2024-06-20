@@ -5,6 +5,8 @@ import com.dicoding.motour.data.repository.landmark.detail.datasource.LandmarkDe
 import com.dicoding.motour.data.repository.landmark.detail.datasourceImpl.LandmarkDetailRemoteDatasourceImpl
 import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkRemoteDatasource
 import com.dicoding.motour.data.repository.landmark.list.datasourceImpl.LandmarkRemoteDatasourceImpl
+import com.dicoding.motour.data.repository.scanner.ScannerRemoteDatasource
+import com.dicoding.motour.data.repository.scanner.ScannerRemoteDatasourceImpl
 import dagger.Module
 import dagger.Provides
 
@@ -13,6 +15,13 @@ class RemoteDataModule {
     @Provides
     fun provideLandmarkRemoteDataSource(educaTourService: EducaTourService): LandmarkRemoteDatasource {
         return LandmarkRemoteDatasourceImpl(
+            educaTourService
+        )
+    }
+
+    @Provides
+    fun provideScannerRemoteDataSource(educaTourService: EducaTourService): ScannerRemoteDatasource {
+        return ScannerRemoteDatasourceImpl(
             educaTourService
         )
     }

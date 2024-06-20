@@ -6,8 +6,11 @@ import com.dicoding.motour.data.repository.landmark.list.LandmarkRepositoryImpl
 import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkCacheDatasource
 import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkLocalDatasource
 import com.dicoding.motour.data.repository.landmark.list.datasource.LandmarkRemoteDatasource
+import com.dicoding.motour.data.repository.scanner.ScannerRemoteDatasource
+import com.dicoding.motour.data.repository.scanner.ScannerRepositoryImpl
 import com.dicoding.motour.domain.repository.LandmarkDetailRepository
 import com.dicoding.motour.domain.repository.LandmarkRepository
+import com.dicoding.motour.domain.repository.ScannerRepository
 import dagger.Module
 import dagger.Provides
 
@@ -23,6 +26,15 @@ class RepositoryModule {
             landmarkCacheDatasource,
             landmarkLocalDatasource,
             landmarkRemoteDatasource
+        )
+    }
+
+    @Provides
+    fun provideScannerRepository(
+        scannerRemoteDatasource: ScannerRemoteDatasource
+    ): ScannerRepository {
+        return ScannerRepositoryImpl(
+            scannerRemoteDatasource
         )
     }
 

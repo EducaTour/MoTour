@@ -101,6 +101,8 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
 //     navigation ui
     implementation(libs.navigation.ui.ktx)
+    // jakewharton
+    implementation(libs.jakewharton)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
