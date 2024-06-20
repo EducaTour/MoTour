@@ -9,15 +9,15 @@ import android.os.Build
 import android.os.Environment
 import android.provider.MediaStore
 import androidx.core.content.FileProvider
-import java.io.File
-import java.text.SimpleDateFormat
-import java.util.Date
 import com.dicoding.motour.BuildConfig
-import java.io.ByteArrayOutputStream
-import java.io.FileOutputStream
-import java.io.InputStream
 import org.threeten.bp.ZonedDateTime
 import org.threeten.bp.format.DateTimeFormatter
+import java.io.ByteArrayOutputStream
+import java.io.File
+import java.io.FileOutputStream
+import java.io.InputStream
+import java.text.SimpleDateFormat
+import java.util.Date
 import java.util.Locale
 
 private const val FILENAME_FORMAT = "yyyyMMdd_HHmmss"
@@ -93,5 +93,9 @@ fun parseAndFormatDate(dateString: String): String {
 }
 
 fun formatName(name: String): String {
-    return name.split('_').joinToString(" ") { it.capitalize(Locale.getDefault()) }
+    return name.split('_').joinToString(" ") { it.replaceFirstChar {
+        if (it.isLowerCase()) it.titlecase(
+            Locale.getDefault()
+        ) else it.toString()
+    } }
 }
