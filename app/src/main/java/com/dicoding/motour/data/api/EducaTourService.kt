@@ -2,6 +2,7 @@ package com.dicoding.motour.data.api
 
 import com.dicoding.motour.data.model.landmark.detail.LandmarkDetailData
 import com.dicoding.motour.data.model.landmark.list.LandmarkList
+import com.dicoding.motour.data.model.scanner.Data
 import com.dicoding.motour.data.model.scanner.ScannerResponse
 import okhttp3.MultipartBody
 import retrofit2.Response
@@ -27,6 +28,6 @@ interface EducaTourService {
     @POST("predictions/")
     suspend fun getScanner(
         @Part file: MultipartBody.Part,
-    ): Response<ScannerResponse>
+    ): Response<Data>
 
 }
