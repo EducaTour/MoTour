@@ -19,25 +19,31 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MoTour"
+        android:theme="@style/Theme.MoTour.Splash"
         tools:targetApi="31">
         <activity
             android:name=".presentation.scanner.ResultScanActivity"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.landmark.LandmarkDetailActivity"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.scanner.PostScanActivity"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.setting.AboutActivity"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.setting.FaqActivity"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.scanner.ScanActivity"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.MainActivity"
