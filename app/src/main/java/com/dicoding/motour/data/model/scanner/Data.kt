@@ -4,7 +4,7 @@ package com.dicoding.motour.data.model.scanner
 import com.google.gson.annotations.SerializedName
 
 data class Data(
-    @SerializedName("createdAt")
+    @SerializedName("created_at")
     val createdAt: String,
     @SerializedName("id")
     val id: String,
@@ -14,6 +14,6 @@ data class Data(
     val rate: String,
     @SerializedName("result")
     val result: String,
-    @SerializedName("userId")
-    val userId: String
+    @SerializedName("image")
+    val image: String
 )
