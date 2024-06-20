@@ -27,4 +27,10 @@
     <string name="back">Back</string>
     <string name="retry">Retry</string>
     <string name="post_image">post image</string>
+    <string name="result">Result</string>
+    <string name="created_at">created at</string>
+    <string name="result_image">result image</string>
+    <string name="rate">100%</string>
+    <string name="landmark_name">landmark name</string>
+    <string name="furthermore">furthermore</string>
 </resources>
