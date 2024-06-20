@@ -232,7 +232,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="72dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -261,7 +261,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="72dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -290,7 +290,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="72dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -319,8 +319,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="72dp"                        android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
@@ -348,8 +347,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="72dp"                        android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
@@ -377,8 +375,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="72dp"                        android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
@@ -406,8 +403,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_width="72dp"                        android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
@@ -455,7 +451,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -484,7 +480,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -547,7 +543,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -576,7 +572,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -605,7 +601,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="match_parent"
+                        android:layout_width="48dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
