@@ -12,11 +12,13 @@ import androidx.core.content.FileProvider
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
-import java.util.Locale
 import com.dicoding.motour.BuildConfig
 import java.io.ByteArrayOutputStream
 import java.io.FileOutputStream
 import java.io.InputStream
+import org.threeten.bp.ZonedDateTime
+import org.threeten.bp.format.DateTimeFormatter
+import java.util.Locale
 
 private const val FILENAME_FORMAT = "yyyyMMdd_HHmmss"
 private val timeStamp: String = SimpleDateFormat(FILENAME_FORMAT, Locale.US).format(Date())
@@ -80,4 +82,16 @@ fun File.reduceFileImage(): File {
     } while (streamLength > MAXIMAL_SIZE)
     bitmap?.compress(Bitmap.CompressFormat.JPEG, compressQuality, FileOutputStream(file))
     return file
+}
+
+fun parseAndFormatDate(dateString: String): String {
+    val inputFormatter = DateTimeFormatter.ISO_ZONED_DATE_TIME
+    val outputFormatter = DateTimeFormatter.ofPattern("EEEE, dd MMMM yyyy", Locale.getDefault())
+
+    val zonedDateTime = ZonedDateTime.parse(dateString, inputFormatter)
+    return zonedDateTime.format(outputFormatter)
+}
+
+fun formatName(name: String): String {
+    return name.split('_').joinToString(" ") { it.capitalize(Locale.getDefault()) }
 }
