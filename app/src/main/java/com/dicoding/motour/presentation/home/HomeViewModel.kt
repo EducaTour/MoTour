@@ -1,12 +1,17 @@
 package com.dicoding.motour.presentation.home
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
 import com.dicoding.motour.data.model.landmark.list.Landmark
 import com.dicoding.motour.domain.usecase.GetLandmarkListUseCase
 import com.dicoding.motour.domain.usecase.UpdateLandmarkListUsecase
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import java.net.UnknownHostException
 
 class HomeViewModel(
     private val getLandmarkListUseCase: GetLandmarkListUseCase,
@@ -30,12 +35,24 @@ class HomeViewModel(
             landmarkList = getLandmarkListUseCase.execute()
             _data.value = LandmarkListState.Result(landmarkList)
         } catch (e: Exception) {
-            _data.value = LandmarkListState.Error(e.message.toString())
+            e.cause?.javaClass?.let {
+                if (it.name == "java.net.UnknownHostException") {
+                    _data.value = LandmarkListState.Error(it.name)
+                }
+            }
         }
     }
 
-    fun updateLandmarkList() = liveData {
-        val landmarkList = updateLandmarkListUsecase.execute()
-        emit(landmarkList)
+    suspend fun updateLandmarkList() {
+        try {
+            updateLandmarkListUsecase.execute()
+        } catch (e: Exception) {
+            e.cause?.javaClass?.let {
+                if (it.name == "java.net.UnknownHostException") {
+                    // Since it's only updating the landmark db, we don't need to notify the UI thread
+                    // of network error
+                }
+            }
+        }
     }
 }
