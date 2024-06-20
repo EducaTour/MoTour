@@ -39,4 +39,8 @@ class HomeViewModel(
             }
         }
     }
+
+    suspend fun updateLandmarkList()  {
+        updateLandmarkListUsecase.execute()
+    }
 }

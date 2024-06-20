@@ -65,8 +65,6 @@ class HomeFragment : Fragment() {
             rvLandmark.setHasFixedSize(true)
         }
 
-        fetchLandmarkList()
-
         viewModel.landmarkList.observe(viewLifecycleOwner) {
             when (it) {
                 is HomeViewModel.LandmarkListState.Loading -> {
@@ -106,6 +104,11 @@ class HomeFragment : Fragment() {
         }
     }
 
+    override fun onResume() {
+        super.onResume()
+        fetchLandmarkList()
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
@@ -113,6 +116,7 @@ class HomeFragment : Fragment() {
 
     private fun fetchLandmarkList() {
         viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.updateLandmarkList()
             viewModel.getLandmarkList()
         }
     }
