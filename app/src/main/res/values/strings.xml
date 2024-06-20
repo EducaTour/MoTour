@@ -33,4 +33,36 @@
     <string name="rate">100%</string>
     <string name="landmark_name">landmark name</string>
     <string name="furthermore">furthermore</string>
+    <string name="about_description">EducaTour was founded by the C241-PS283 Bangkit Capstone Team dedicated to revolutionize the educational travel experience.</string>
+    <string name="about_ml_team">Machine Learning Team:\n
+        • Hans Naufal Granito\n
+        • Divany Harryndira\n
+        • Muhammad Raffa Reyhan
+    </string>
+    <string name="about_cc_team">Cloud Computing Team:\n
+        • Mohammad Ferry Husnil Arif\n
+        • Apta Rasendriya Wijaya
+    </string>
+    <string name="about_md_team">Mobile Development Team:\n
+        • Ibni Shaquille Syauqi Ibrahim\n
+        • Deeon Yaksa Anugrah
+    </string>
+    <string name="educatour_extra_space">" EducaTour "</string>
+    <string name="history"><u>History</u></string>
+    <string name="unique_activities"><u>Unique Activities</u></string>
+    <string name="visiting_information"><u>Visiting Information</u></string>
+    <string name="contact_information"><u>Contact Information</u></string>
+    <string name="google_maps"><u>Google Maps</u></string>
+    <string name="child">Child\t\t:</string>
+    <string name="adult">Adult\t\t:</string>
+    <string name="sun">Sunday\t\t\t\t\t\t:</string>
+    <string name="sat">Saturday\t\t\t\t\t:</string>
+    <string name="fri">Friday\t\t\t\t\t\t\t:</string>
+    <string name="thru">Thursday\t\t\t\t:</string>
+    <string name="wed">Wednesday\t\t:</string>
+    <string name="tues">Tuesday\t\t\t\t\t:</string>
+    <string name="mon">Monday\t\t\t\t\t\t:</string>
+    <string name="phone">Phone\t\t:</string>
+    <string name="email">Email\t\t\t:</string>
+    <string name="web">Web\t\t\t\t:</string>
 </resources>

@@ -26,4 +26,42 @@
     <string name="about_us">关于我们</string>
     <string name="back">返回</string>
     <string name="retry">刷新</string>
+    <string name="about_description">EducaTour 由 C241-PS283 Bangkit Capstone 团队 创立，致力于彻底改变教育旅行体验。</string>
+    <string name="about_ml_team">Machine Learning 团队:\n
+        • Hans Naufal Granito\n
+        • Divany Harryndira\n
+        • Muhammad Raffa Reyhan
+    </string>
+    <string name="about_cc_team">Cloud Computing 团队:\n
+        • Mohammad Ferry Husnil Arif\n
+        • Apta Rasendriya Wijaya
+    </string>
+    <string name="about_md_team">Mobile Development 团队:\n
+        • Ibni Shaquille Syauqi Ibrahim\n
+        • Deeon Yaksa Anugrah
+    </string>
+    <string name="history"><u>历史</u></string>
+    <string name="unique_activities"><u>独特的活动</u></string>
+    <string name="visiting_information"><u>参观信息</u></string>
+    <string name="contact_information"><u>
+联系信息</u></string>
+    <string name="child">孩子 :</string>
+    <string name="adult">成人 :</string>
+    <string name="sun">星期日 :</string>
+    <string name="sat">星期六 :</string>
+    <string name="fri">星期五 :</string>
+    <string name="thru">星期四 :</string>
+    <string name="wed">星期三 :</string>
+    <string name="tues">星期二 :</string>
+    <string name="mon">星期一 :</string>
+    <string name="phone">电话 :</string>
+    <string name="email">电邮 :</string>
+    <string name="web">网站 :</string>
+    <string name="post_image">post image</string>
+    <string name="result">结果</string>
+    <string name="created_at">created at</string>
+    <string name="result_image">result image</string>
+    <string name="rate">100%</string>
+    <string name="landmark_name">landmark name</string>
+    <string name="furthermore">细节</string>
 </resources>
