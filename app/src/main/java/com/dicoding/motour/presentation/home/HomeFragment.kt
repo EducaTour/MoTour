@@ -5,12 +5,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dicoding.motour.R
 import com.dicoding.motour.data.model.landmark.list.Landmark
 import com.dicoding.motour.databinding.FragmentHomeBinding
 import com.dicoding.motour.presentation.di.Injector
@@ -121,5 +123,10 @@ class HomeFragment : Fragment() {
     private fun showError(state: Boolean) {
         binding.ivError.visibility = if (state) View.VISIBLE else View.GONE
         binding.btnRetry.visibility = if (state) View.VISIBLE else View.GONE
+        Toast.makeText(
+            requireContext(),
+            getString(R.string.network_error),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }

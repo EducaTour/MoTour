@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.dicoding.motour.R
 import com.dicoding.motour.data.model.landmark.detail.LANDMARKS_KEY
 import com.dicoding.motour.databinding.ActivityPostScanBinding
 import com.dicoding.motour.presentation.di.Injector
@@ -88,7 +89,7 @@ class PostScanActivity : AppCompatActivity() {
                         showLoading(false)
                         Toast.makeText(
                             this,
-                            "Error: ${result.exception.message}",
+                            getString(R.string.network_error),
                             Toast.LENGTH_SHORT
                         ).show()
                     }

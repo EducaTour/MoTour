@@ -70,6 +70,8 @@ class ResultScanActivity : AppCompatActivity() {
     }
 
     private fun showError(state: Boolean) {
+        binding.tvInvalidLandmarkError.visibility = if (state) View.VISIBLE else View.GONE
+        binding.btnFurthermore.visibility = if (state) View.GONE else View.VISIBLE
         binding.ivError.visibility = if (state) View.VISIBLE else View.GONE
         binding.btnRetry.visibility = if (state) View.VISIBLE else View.GONE
         binding.ivLandmark.visibility = if (state) View.GONE else View.VISIBLE

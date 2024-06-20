@@ -22,6 +22,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.dicoding.motour.R
 import com.dicoding.motour.databinding.ActivityScanBinding
 import java.text.SimpleDateFormat
 import java.util.Locale
@@ -132,8 +133,7 @@ class ScanActivity : AppCompatActivity() {
                     imageCapture
                 )
             } catch (exc: Exception) {
-                // This shouldn't happen
-                Toast.makeText(this, "something wrong", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.unknown_error), Toast.LENGTH_SHORT).show()
             }
         }, ContextCompat.getMainExecutor(this))
     }
@@ -164,12 +164,13 @@ class ScanActivity : AppCompatActivity() {
             ContextCompat.getMainExecutor(this),
             object : ImageCapture.OnImageSavedCallback {
                 override fun onError(exc: ImageCaptureException) {
-                    Toast.makeText(baseContext, "Photo capture failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext,
+                        getString(R.string.unknown_error), Toast.LENGTH_SHORT).show()
                 }
 
                 override fun onImageSaved(output: ImageCapture.OutputFileResults) {
-                    val msg = "Photo capture succeeded: ${output.savedUri}"
-                    Toast.makeText(baseContext, msg, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(baseContext,
+                        getString(R.string.image_captured), Toast.LENGTH_SHORT).show()
                     chosenImageUri = output.savedUri.toString()
                     afterScan()
                 }

@@ -5,6 +5,7 @@ import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsControllerCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
+import com.dicoding.motour.R
 import com.dicoding.motour.data.model.landmark.detail.LandmarkDetail
 import com.dicoding.motour.databinding.ActivityLandmarkDetailBinding
 import com.dicoding.motour.presentation.di.Injector
@@ -224,6 +226,11 @@ class LandmarkDetailActivity : AppCompatActivity() {
     private fun showError(state: Boolean) {
         binding.ivError.visibility = if (state) View.VISIBLE else View.GONE
         binding.btnRetry.visibility = if (state) View.VISIBLE else View.GONE
+        Toast.makeText(
+            this,
+            getString(R.string.network_error),
+            Toast.LENGTH_SHORT
+        ).show()
     }
 
     companion object {
