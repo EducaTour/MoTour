@@ -186,7 +186,7 @@ class LandmarkDetailActivity : AppCompatActivity() {
 
             val website = landmark.contactInfo?.website
 
-            if (website != null) {
+            if (website != null && website != "-") {
                 tvLandmarkContactWebsite.text = website
                 tvLandmarkContactWebsite.paintFlags = Paint.UNDERLINE_TEXT_FLAG
                 tvLandmarkContactWebsite.setOnClickListener {

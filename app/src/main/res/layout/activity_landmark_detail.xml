@@ -450,7 +450,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="56dp"
+                        android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -480,7 +480,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="56dp"
+                        android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -510,7 +510,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="56dp"
+                        android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -540,7 +540,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="56dp"
+                        android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -570,7 +570,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="56dp"
+                        android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -600,7 +600,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="56dp"
+                        android:layout_width="96dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
