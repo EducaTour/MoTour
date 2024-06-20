@@ -26,7 +26,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="256dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/landmark_4k_sample"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +36,7 @@
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/krylon_regular"
                 android:paddingHorizontal="32dp"
-                android:text="Borobudur Temple"
+                android:text="Lorem Ipsum"
                 android:textAlignment="center"
                 android:textColor="@color/main_black"
                 android:textSize="36sp"
@@ -114,7 +113,6 @@
                 android:layout_marginHorizontal="36dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/landmark_4k_sample"
                 app:layout_constraintTop_toBottomOf="@id/tv_landmark_history" />
 
             <LinearLayout
@@ -246,7 +244,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -275,7 +273,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -304,7 +302,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -332,7 +330,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -360,7 +358,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -388,7 +386,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -416,7 +414,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="OPENING_HOURS"
@@ -445,13 +443,44 @@
                 app:layout_constraintTop_toBottomOf="@id/divider_3">
 
                 <LinearLayout
+                    android:id="@+id/regular_price_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="48dp"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/regular"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_price_regular"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/ppmori_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="TICKET_PRICE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/adult_price_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="56dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -465,7 +494,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="TICKET_PRICE"
@@ -474,13 +503,44 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/student_price_layout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
                     android:orientation="horizontal">
 
                     <TextView
-                        android:layout_width="48dp"
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/student"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_price_student"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/ppmori_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="TICKET_PRICE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/child_price_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="56dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
                         android:justificationMode="inter_word"
@@ -494,7 +554,67 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:fontFamily="@font/ppmori_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="TICKET_PRICE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/foreigner_price_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
                         android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/foreigner"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_price_foreigner"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/ppmori_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="TICKET_PRICE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/packaging_price_layout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/packages"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_price_packages"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="TICKET_PRICE"
@@ -557,7 +677,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="PHONE"
@@ -586,7 +706,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="EMAIL"
@@ -615,7 +735,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:fontFamily="@font/krylon_regular"
+                        android:fontFamily="@font/ppmori_regular"
                         android:justificationMode="inter_word"
                         android:lineSpacingExtra="3dp"
                         android:text="WEBSITE"
@@ -639,15 +759,6 @@
 
 
     </androidx.core.widget.NestedScrollView>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_landmark"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/divider_one" />
 
     <com.google.android.material.progressindicator.CircularProgressIndicator
         android:id="@+id/progress_indicator"

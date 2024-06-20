@@ -1,6 +1,7 @@
 package com.dicoding.motour.presentation.landmark
 
 import android.content.Intent
+import android.graphics.Paint
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
@@ -154,8 +155,21 @@ class LandmarkDetailActivity : AppCompatActivity() {
                 startActivity(intent)
             }
 
-            tvLandmarkPriceAdult.text = "Rp. ${landmark.ticketPrice?.adult ?: "-"}"
-            tvLandmarkPriceChild.text = "Rp. ${landmark.ticketPrice?.child ?: "-"}"
+            val regular = landmark.ticketPrice?.regular
+            val adult = landmark.ticketPrice?.adult
+            val child = landmark.ticketPrice?.child
+            val student = landmark.ticketPrice?.student
+            val foreigner = landmark.ticketPrice?.foreign
+            val ultimatePackage = landmark.ticketPrice?.ultimate
+            val otherPackage = landmark.ticketPrice?.packageB
+
+            if (regular != null) tvLandmarkPriceRegular.text = formatPrice(regular) else regularPriceLayout.visibility = View.GONE
+            if (adult != null) tvLandmarkPriceAdult.text = formatPrice(adult) else adultPriceLayout.visibility = View.GONE
+            if (child != null) tvLandmarkPriceChild.text = formatPrice(child) else childPriceLayout.visibility = View.GONE
+            if (student != null) tvLandmarkPriceStudent.text = formatPrice(student) else studentPriceLayout.visibility = View.GONE
+            if (foreigner != null) tvLandmarkPriceForeigner.text = formatPrice(foreigner) else foreignerPriceLayout.visibility = View.GONE
+            if (ultimatePackage != null) tvLandmarkPricePackages.text = formatPrice(ultimatePackage) else packagingPriceLayout.visibility = View.GONE
+            if (otherPackage != null) tvLandmarkPricePackages.text = formatPrice(otherPackage) else packagingPriceLayout.visibility = View.GONE
 
             tvLandmarkOpenMonday.text = landmark.openingHours?.monday ?: "-"
             tvLandmarkOpenTuesday.text = landmark.openingHours?.tuesday ?: "-"
@@ -167,12 +181,28 @@ class LandmarkDetailActivity : AppCompatActivity() {
 
             tvLandmarkContactEmail.text = landmark.contactInfo?.email ?: "-"
             tvLandmarkContactPhone.text = landmark.contactInfo?.phone ?: "-"
-            tvLandmarkContactWebsite.text = landmark.contactInfo?.website ?: "-"
+
+            val website = landmark.contactInfo?.website
+
+            if (website != null) {
+                tvLandmarkContactWebsite.text = website
+                tvLandmarkContactWebsite.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+                tvLandmarkContactWebsite.setOnClickListener {
+                    val intent = Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(website)
+                    )
+                    startActivity(intent)
+                }
+            } else {
+                tvLandmarkContactWebsite.text = "-"
+            }
 
             if (landmark.uniqueActivities.isNotEmpty()) {
                 tvLandmarkUniqueActivities.text = makeBulletedList(landmark.uniqueActivities)
             } else {
-                tvLandmarkUniqueActivities.text = "-"
+                uniqueActivitiesHeader.visibility = View.GONE
+                tvLandmarkUniqueActivities.visibility = View.GONE
             }
         }
     }
@@ -184,6 +214,8 @@ class LandmarkDetailActivity : AppCompatActivity() {
         }
         return builder.toString().trim()
     }
+
+    private fun formatPrice(price: String) = "± Rp. $price"
 
     private fun showLoading(state: Boolean) {
         binding.progressIndicator.visibility = if (state) View.VISIBLE else View.GONE

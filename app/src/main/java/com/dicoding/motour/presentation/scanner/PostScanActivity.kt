@@ -11,6 +11,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.dicoding.motour.data.model.landmark.detail.LANDMARKS_KEY
 import com.dicoding.motour.databinding.ActivityPostScanBinding
 import com.dicoding.motour.presentation.di.Injector
 import com.dicoding.motour.utils.Result
@@ -61,14 +62,13 @@ class PostScanActivity : AppCompatActivity() {
 
                     is Result.Success -> {
                         showLoading(false)
-                        Toast.makeText(this, "Success: ${result.data}", Toast.LENGTH_SHORT).show()
                         val response = result.data
                         val scanResult = response.code()
                         val intent = Intent(this, ResultScanActivity::class.java)
                         if (scanResult == 201) {
                             val data = response.body()!!
                             intent.apply {
-                                putExtra(ResultScanActivity.EXTRA_SCAN_ID, data.id)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_ID, LANDMARKS_KEY[data.result])
                                 putExtra(ResultScanActivity.EXTRA_SCAN_RESULT, data.result)
                                 putExtra(ResultScanActivity.EXTRA_SCAN_RATE, data.rate)
                                 putExtra(ResultScanActivity.EXTRA_SCAN_IMAGE, data.image)
