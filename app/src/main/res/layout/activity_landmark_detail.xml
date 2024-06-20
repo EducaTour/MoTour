@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/parent_scrollview"
     android:layout_width="match_parent"
-    android:background="@color/main_white"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/main_white">
 
     <androidx.core.widget.NestedScrollView
         android:id="@+id/nested_scrollview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
 
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/content_layout"
             android:layout_width="match_parent"
             android:layout_height="0dp">
 
@@ -63,116 +67,565 @@
                 android:lineSpacingExtra="3dp"
                 android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
                 android:textColor="@color/main_black"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/divider_1" />
 
             <LinearLayout
-                android:id="@+id/temp_layout"
-                android:layout_width="wrap_content"
+                android:id="@+id/history_header"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
                 app:layout_constraintTop_toBottomOf="@id/tv_landmark_description">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
-                    android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_history" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
+                    android:text="@string/history"
                     android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_landmark_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/krylon_regular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="3dp"
+                android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@id/history_header" />
+
+            <ImageView
+                android:id="@+id/iv_image_one"
+                android:layout_width="match_parent"
+                android:layout_height="256dp"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/landmark_4k_sample"
+                app:layout_constraintTop_toBottomOf="@id/tv_landmark_history" />
+
+            <LinearLayout
+                android:id="@+id/unique_activities_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/iv_image_one">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_activity" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
                     android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
+                    android:text="@string/unique_activities"
                     android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_landmark_unique_activities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/krylon_regular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="3dp"
+                android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@id/unique_activities_header" />
+
+            <LinearLayout
+                android:id="@+id/visiting_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/tv_landmark_unique_activities">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_visit" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/krylon_regular"
+                    android:text="@string/visiting_information"
+                    android:textColor="@color/main_black"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_landmark_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="12dp"
+                android:fontFamily="@font/krylon_regular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="3dp"
+                android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
+                android:textColor="@color/main_black"
+                app:layout_constraintTop_toBottomOf="@id/visiting_header" />
+
+            <TextView
+                android:id="@+id/tv_landmark_map_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/krylon_regular"
+                android:justificationMode="inter_word"
+                android:lineSpacingExtra="3dp"
+                android:text="@string/google_maps"
+                android:textColor="@color/main_black"
+                android:textStyle="bold"
+                app:layout_constraintTop_toBottomOf="@id/tv_landmark_address" />
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="16dp"
+                app:dividerColor="@color/main_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_landmark_map_url" />
+
+            <LinearLayout
+                android:id="@+id/opening_hours_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/divider_2">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
-                    android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/mon"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_monday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/tues"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_tuesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/wed"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_wednesday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/thru"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_thursday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/fri"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_friday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/sat"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_saturday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/sun"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_open_sunday"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="OPENING_HOURS"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <com.google.android.material.divider.MaterialDivider
+                android:id="@+id/divider_3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginHorizontal="32dp"
+                android:layout_marginVertical="16dp"
+                app:dividerColor="@color/main_gray"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/opening_hours_layout" />
+
+            <LinearLayout
+                android:id="@+id/ticket_price_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/divider_3">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/adult"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_price_adult"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="TICKET_PRICE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="36dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/child"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_price_child"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="TICKET_PRICE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_info_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="36dp"
+                android:layout_marginTop="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@id/ticket_price_layout">
+
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:src="@drawable/ic_contact_info" />
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginStart="8dp"
+                    android:fontFamily="@font/krylon_regular"
+                    android:text="@string/contact_information"
+                    android:textColor="@color/main_black"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/contact_info_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/contact_info_header">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
-                    android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/phone"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_contact_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="PHONE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
-                    android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                    android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/email"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_contact_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="EMAIL"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="36dp"
-                    android:layout_marginTop="12dp"
-                    android:fontFamily="@font/krylon_regular"
-                    android:justificationMode="inter_word"
-                    android:lineSpacingExtra="3dp"
-                    android:text="Located on the island of Java, the magnificent Borobudur temple is the world's biggest Buddhist monument you must visit at least once in your lifetime. The area is surrounded by beautiful scenery of Central Java’s nature that you can only find there."
-                    android:textColor="@color/main_black"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/divider_1" />
+                    android:orientation="horizontal">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="@string/web"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_landmark_contact_website"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/krylon_regular"
+                        android:justificationMode="inter_word"
+                        android:lineSpacingExtra="3dp"
+                        android:text="WEBSITE"
+                        android:textColor="@color/main_black"
+                        android:textStyle="bold" />
+                </LinearLayout>
             </LinearLayout>
 
             <ImageView
@@ -184,11 +637,58 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/temp_layout" />
+                app:layout_constraintTop_toBottomOf="@id/contact_info_layout" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
+
     </androidx.core.widget.NestedScrollView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_landmark"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider_one" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progress_indicator"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:indeterminate="true"
+        android:visibility="visible"
+        app:indicatorColor="@color/blue_darker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_error"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:layout_marginBottom="64dp"
+        android:src="@drawable/image_error"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/ppmori_regular"
+        android:text="@string/retry"
+        android:textColor="@color/main_white"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_error" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/fab_back"
