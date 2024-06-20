@@ -18,6 +18,9 @@ import com.dicoding.motour.data.model.landmark.list.Landmark
 import com.dicoding.motour.databinding.FragmentHomeBinding
 import com.dicoding.motour.presentation.di.Injector
 import com.dicoding.motour.presentation.landmark.LandmarkDetailActivity
+import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -115,8 +118,10 @@ class HomeFragment : Fragment() {
     }
 
     private fun fetchLandmarkList() {
-        viewLifecycleOwner.lifecycleScope.launch {
+        CoroutineScope(Dispatchers.IO).launch {
             viewModel.updateLandmarkList()
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
             viewModel.getLandmarkList()
         }
     }
