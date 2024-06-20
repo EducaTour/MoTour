@@ -7,19 +7,19 @@ import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "opening_hours")
 data class OpeningHours(
-    @SerializedName("friday")
+    @SerializedName("Friday")
     val friday: String?,
-    @SerializedName("monday")
+    @SerializedName("Monday")
     val monday: String?,
-    @SerializedName("saturday")
+    @SerializedName("Saturday")
     val saturday: String?,
     @PrimaryKey
-    @SerializedName("sunday")
+    @SerializedName("Sunday")
     val sunday: String,
-    @SerializedName("thursday")
+    @SerializedName("Thursday")
     val thursday: String?,
-    @SerializedName("tuesday")
+    @SerializedName("Tuesday")
     val tuesday: String?,
-    @SerializedName("wednesday")
+    @SerializedName("Wednesday")
     val wednesday: String?
 )

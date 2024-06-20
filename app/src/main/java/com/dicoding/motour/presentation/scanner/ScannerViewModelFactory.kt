@@ -1,8 +1,8 @@
 package com.dicoding.motour.presentation.scanner
 
 import androidx.lifecycle.ViewModel
-import com.dicoding.motour.domain.usecase.GetScannerUseCase
 import androidx.lifecycle.ViewModelProvider
+import com.dicoding.motour.domain.usecase.GetScannerUseCase
 
 class ScannerViewModelFactory(
     private val getScannerUseCase: GetScannerUseCase

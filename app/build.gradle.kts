@@ -114,4 +114,12 @@ dependencies {
     implementation(libs.camerax.lifecycle)
     implementation(libs.camerax.view)
 
+    // Datastore
+    implementation(libs.androidx.datastore.preferences)
+
+    // Phoenix (restart app - multilanguage purpose)
+    implementation(libs.process.phoenix)
+
+    // Splashscreen
+    implementation(libs.androidx.core.splashscreen)
 }

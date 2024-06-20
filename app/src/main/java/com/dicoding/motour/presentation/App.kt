@@ -9,8 +9,10 @@ import com.dicoding.motour.presentation.di.core.DaggerAppComponent
 import com.dicoding.motour.presentation.di.core.NetModule
 import com.dicoding.motour.presentation.di.core.RemoteDataModule
 import com.dicoding.motour.presentation.di.home.HomeSubComponent
-import com.dicoding.motour.presentation.di.scanner.ScannerSubComponent
 import com.dicoding.motour.presentation.di.landmark.LandmarkSubComponent
+import com.dicoding.motour.presentation.di.scanner.ScannerSubComponent
+import com.dicoding.motour.presentation.di.settings.SettingsSubComponent
+import com.dicoding.motour.presentation.di.startup.StartupSubComponent
 import com.jakewharton.threetenabp.AndroidThreeTen
 
 
@@ -37,5 +39,13 @@ class App : Application(), Injector {
 
     override fun createLandmarkSubComponent(): LandmarkSubComponent {
         return appComponent.landmarkSubComponent().create()
+    }
+
+    override fun createSettingsSubComponent(): SettingsSubComponent {
+        return appComponent.settingsSubComponent().create()
+    }
+
+    override fun createStartupSubComponent(): StartupSubComponent {
+        return appComponent.startupSubComponent().create()
     }
 }

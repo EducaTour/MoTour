@@ -15,5 +15,14 @@ data class TicketPrice(
     @SerializedName("senior")
     val senior: String?,
     @SerializedName("student")
-    val student: String?
+    val student: String?,
+    @SerializedName("regular")
+    val regular: String?,
+    @SerializedName("foreign visitors")
+    val foreign: String?,
+    @SerializedName("ultimate bundling package")
+    val ultimate: String?,
+    @SerializedName("Packet B (3 Visitor)")
+    val packageB: String?
+
 )

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MoTour</string>
+    <string name="app_name">EducaTour</string>
     <string name="home">Beranda</string>
     <string name="scan">Scan</string>
     <string name="settings">Pengaturan</string>
@@ -26,4 +26,51 @@
     <string name="about_us">Tentang Kami</string>
     <string name="back">Kembali</string>
     <string name="retry">Muat Ulang</string>
+    <string name="about_description">EducaTour didirikan oleh Tim Capstone Bangkit C241-PS283 yang berdedikasi untuk membuat revolusi pada pengalaman travelling education.</string>
+    <string name="about_ml_team">Tim Machine Learning:\n
+        • Hans Naufal Granito\n
+        • Divany Harryndira\n
+        • Muhammad Raffa Reyhan
+    </string>
+    <string name="about_cc_team">Tim Cloud Computing:\n
+        • Mohammad Ferry Husnil Arif\n
+        • Apta Rasendriya Wijaya
+    </string>
+    <string name="about_md_team">Tim Mobile Development:\n
+        • Ibni Shaquille Syauqi Ibrahim\n
+        • Deeon Yaksa Anugrah
+    </string>
+    <string name="history"><u>Sejarah</u></string>
+    <string name="unique_activities"><u>Aktivitas Unik</u></string>
+    <string name="visiting_information"><u>Informasi Kunjungan</u></string>
+    <string name="contact_information"><u>Informasi Kontak</u></string>
+    <string name="child">Anak</string>
+    <string name="adult">Dewasa</string>
+    <string name="sun">Minggu</string>
+    <string name="sat">Sabtu</string>
+    <string name="fri">Jumat</string>
+    <string name="thru">Kamis</string>
+    <string name="wed">Rabu</string>
+    <string name="tues">Selasa</string>
+    <string name="mon">Senin</string>
+    <string name="phone">Telp</string>
+    <string name="email">Email</string>
+    <string name="web">Web</string>
+    <string name="post_image">post image</string>
+    <string name="result">Hasil</string>
+    <string name="created_at">Tanggal</string>
+    <string name="result_image">Hasil Gambar</string>
+    <string name="rate">100%</string>
+    <string name="foreigner">Mancanegara</string>
+    <string name="regular">Umum</string>
+    <string name="packages">Paket</string>
+    <string name="landmark_name">landmark name</string>
+    <string name="furthermore">Lebih Lanjut</string>
+    <string name="application_restart">Restart Aplikasi</string>
+    <string name="application_will_now_restart_to_change_the_preferred_language">Aplikasi akan restart untuk mengganti bahasa.</string>
+    <string name="student">Pelajar</string>
+    <string name="unrecognized_landmark">Landmark Tidak Dikenal!</string>
+    <string name="network_error">Koneksi Internet Error</string>
+    <string name="unknown_error">Sebuah Kesalahan Tidak Dikenal Terjadi</string>
+    <string name="image_captured">Gambar Terambil dan Tersimpan</string>
 </resources>

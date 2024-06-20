@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MoTour</string>
+    <string name="app_name">EducaTour</string>
     <string name="home">Home</string>
     <string name="scan">Scan</string>
     <string name="settings">Settings</string>
@@ -33,4 +33,46 @@
     <string name="rate">100%</string>
     <string name="landmark_name">landmark name</string>
     <string name="furthermore">furthermore</string>
+    <string name="about_description">EducaTour was founded by the C241-PS283 Bangkit Capstone Team dedicated to revolutionize the educational travel experience.</string>
+    <string name="about_ml_team">Machine Learning Team:\n
+        • Hans Naufal Granito\n
+        • Divany Harryndira\n
+        • Muhammad Raffa Reyhan
+    </string>
+    <string name="about_cc_team">Cloud Computing Team:\n
+        • Mohammad Ferry Husnil Arif\n
+        • Apta Rasendriya Wijaya
+    </string>
+    <string name="about_md_team">Mobile Development Team:\n
+        • Ibni Shaquille Syauqi Ibrahim\n
+        • Deeon Yaksa Anugrah
+    </string>
+    <string name="educatour_extra_space">" EducaTour "</string>
+    <string name="history"><u>History</u></string>
+    <string name="unique_activities"><u>Unique Activities</u></string>
+    <string name="visiting_information"><u>Visiting Information</u></string>
+    <string name="contact_information"><u>Contact Information</u></string>
+    <string name="google_maps"><u>Google Maps</u></string>
+    <string name="foreigner">Foreigner</string>
+    <string name="regular">Regular</string>
+    <string name="packages">Packages</string>
+    <string name="child">Child</string>
+    <string name="adult">Adult</string>
+    <string name="sun">Sunday</string>
+    <string name="sat">Saturday</string>
+    <string name="fri">Friday</string>
+    <string name="thru">Thursday</string>
+    <string name="wed">Wednesday</string>
+    <string name="tues">Tuesday</string>
+    <string name="mon">Monday</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="web">Web</string>
+    <string name="application_restart">Application Restart</string>
+    <string name="application_will_now_restart_to_change_the_preferred_language">Application will now restart to change the preferred language.</string>
+    <string name="student">Student</string>
+    <string name="unrecognized_landmark">Unrecognized Landmark!</string>
+    <string name="network_error">Network Error</string>
+    <string name="unknown_error">An unknown error occurred</string>
+    <string name="image_captured">Image captured and saved</string>
 </resources>

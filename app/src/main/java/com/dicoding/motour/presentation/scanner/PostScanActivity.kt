@@ -1,7 +1,7 @@
 package com.dicoding.motour.presentation.scanner
 
-import android.net.Uri
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
@@ -11,15 +11,17 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import com.bumptech.glide.Glide
+import com.dicoding.motour.R
+import com.dicoding.motour.data.model.landmark.detail.LANDMARKS_KEY
 import com.dicoding.motour.databinding.ActivityPostScanBinding
 import com.dicoding.motour.presentation.di.Injector
-import okhttp3.MultipartBody
-import okhttp3.RequestBody.Companion.asRequestBody
-import javax.inject.Inject
 import com.dicoding.motour.utils.Result
 import com.dicoding.motour.utils.reduceFileImage
 import com.dicoding.motour.utils.uriToFile
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import javax.inject.Inject
 
 class PostScanActivity : AppCompatActivity() {
 
@@ -61,14 +63,13 @@ class PostScanActivity : AppCompatActivity() {
 
                     is Result.Success -> {
                         showLoading(false)
-                        Toast.makeText(this, "Success: ${result.data}", Toast.LENGTH_SHORT).show()
                         val response = result.data
                         val scanResult = response.code()
                         val intent = Intent(this, ResultScanActivity::class.java)
-                        if(scanResult == 201) {
+                        if (scanResult == 201) {
                             val data = response.body()!!
                             intent.apply {
-                                putExtra(ResultScanActivity.EXTRA_SCAN_ID, data.id)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_ID, LANDMARKS_KEY[data.result])
                                 putExtra(ResultScanActivity.EXTRA_SCAN_RESULT, data.result)
                                 putExtra(ResultScanActivity.EXTRA_SCAN_RATE, data.rate)
                                 putExtra(ResultScanActivity.EXTRA_SCAN_IMAGE, data.image)
@@ -88,7 +89,7 @@ class PostScanActivity : AppCompatActivity() {
                         showLoading(false)
                         Toast.makeText(
                             this,
-                            "Error: ${result.exception.message}",
+                            getString(R.string.network_error),
                             Toast.LENGTH_SHORT
                         ).show()
                     }
@@ -98,7 +99,7 @@ class PostScanActivity : AppCompatActivity() {
     }
 
     private fun setupEdgeToEdge() {
-        ViewCompat.setOnApplyWindowInsetsListener(binding.btnBack) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.topLayout) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(0, systemBars.top, 0, 0)
             insets

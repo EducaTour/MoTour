@@ -19,28 +19,41 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MoTour"
+        android:theme="@style/Theme.MoTour.Splash"
         tools:targetApi="31">
         <activity
             android:name=".presentation.scanner.ResultScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.landmark.LandmarkDetailActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.scanner.PostScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.setting.AboutActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.setting.FaqActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.scanner.ScanActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.MoTour"
             android:exported="false" />
         <activity
             android:name=".presentation.MainActivity"
+            android:screenOrientation="portrait"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
