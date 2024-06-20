@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.dicoding.motour.R
 import com.dicoding.motour.databinding.ActivityFaqBinding
 
 class FaqActivity : AppCompatActivity() {
@@ -26,7 +25,7 @@ class FaqActivity : AppCompatActivity() {
     }
 
     private fun setupEdgeToEdge() {
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.btn_back)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(binding.topLayout) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
             insets

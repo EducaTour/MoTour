@@ -5,18 +5,30 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/main_white"
     tools:context=".presentation.setting.AboutActivity">
 
-    <ImageView
-        android:id="@+id/btn_back"
+    <FrameLayout
+        android:id="@+id/top_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/ic_ios_arrow_back"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:tint="@color/main_black" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="?android:attr/selectableItemBackgroundBorderless"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/ic_ios_arrow_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/main_black" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/tv_about_header"
@@ -24,6 +36,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="16dp"
+        android:fontFamily="@font/ppmori_regular"
         android:text="@string/about_us"
         android:textAlignment="center"
         android:textColor="@color/main_black"
@@ -31,7 +44,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btn_back" />
+        app:layout_constraintTop_toBottomOf="@id/top_layout" />
 
     <com.google.android.material.divider.MaterialDivider
         android:id="@+id/divider_one"
@@ -49,22 +62,61 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="40dp"
+        android:fontFamily="@font/ppmori_regular"
         android:justificationMode="inter_word"
-        android:text="@string/faq_camera_answer"
+        android:lineSpacingExtra="3dp"
+        android:text="@string/about_description"
         android:textColor="@color/main_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/divider_one" />
 
     <TextView
-        android:id="@+id/tv_about_hyperlink"
+        android:id="@+id/tv_about_ml_team"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="40dp"
-        android:text="@string/faq_camera_hyperlink"
-        android:textSize="14sp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/ppmori_regular"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/about_ml_team"
+        android:textColor="@color/main_black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_about_description" />
+
+    <TextView
+        android:id="@+id/tv_about_cc_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/ppmori_regular"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/about_cc_team"
+        android:textColor="@color/main_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_ml_team" />
+
+    <TextView
+        android:id="@+id/tv_about_md_team"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="40dp"
+        android:fontFamily="@font/ppmori_regular"
+        android:justificationMode="inter_word"
+        android:lineSpacingExtra="6dp"
+        android:text="@string/about_md_team"
+        android:textColor="@color/main_black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_about_cc_team" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

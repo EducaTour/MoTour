@@ -10,6 +10,6 @@ data class Location(
     @PrimaryKey
     @SerializedName("address")
     val address: String,
-    @SerializedName("maps")
-    val maps: String?
+    @SerializedName("location_url")
+    val locationUrl: String?
 )

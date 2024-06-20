@@ -101,6 +101,8 @@ dependencies {
     implementation(libs.navigation.fragment.ktx)
 //     navigation ui
     implementation(libs.navigation.ui.ktx)
+    // jakewharton
+    implementation(libs.jakewharton)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -112,4 +114,12 @@ dependencies {
     implementation(libs.camerax.lifecycle)
     implementation(libs.camerax.view)
 
+    // Datastore
+    implementation(libs.androidx.datastore.preferences)
+
+    // Phoenix (restart app - multilanguage purpose)
+    implementation(libs.process.phoenix)
+
+    // Splashscreen
+    implementation(libs.androidx.core.splashscreen)
 }

@@ -6,23 +6,45 @@ import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.dicoding.motour.R
+import com.dicoding.motour.data.preferences.LanguageUtil
 import com.dicoding.motour.databinding.ActivityMainBinding
+import com.dicoding.motour.presentation.di.Injector
 import com.dicoding.motour.presentation.scanner.ScanActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
+import kotlinx.coroutines.runBlocking
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var factory: MainViewModelFactory
+    private lateinit var viewModel: MainViewModel
 
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        installSplashScreen()
         enableEdgeToEdge()
 
+        (applicationContext as Injector).createStartupSubComponent().inject(this)
+        viewModel = ViewModelProvider(this, factory)[MainViewModel::class.java]
+
+        viewModel.getPreferredLanguage().observe(this) { language ->
+            val appLocale = LanguageUtil.getLanguageTag(language)
+            runBlocking {
+                AppCompatDelegate.setApplicationLocales(appLocale)
+            }
+        }
 
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 

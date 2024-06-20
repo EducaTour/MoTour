@@ -33,7 +33,8 @@ class LandmarkRepositoryImpl(
                 landmarkList = body.landmarks
             }
         } catch (e: Exception) {
-            Log.i("LandmarkRepositoryImpl", "Error: ${e.message}")
+
+            throw Exception(e)
         }
         return landmarkList
     }
