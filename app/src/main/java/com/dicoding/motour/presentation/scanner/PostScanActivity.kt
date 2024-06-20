@@ -1,11 +1,8 @@
 package com.dicoding.motour.presentation.scanner
 
 import android.net.Uri
-import android.os.Build
 import android.content.Intent
 import android.os.Bundle
-import android.provider.MediaStore
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -20,12 +17,9 @@ import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import javax.inject.Inject
 import com.dicoding.motour.utils.Result
-import com.dicoding.motour.utils.getImageUri
 import com.dicoding.motour.utils.reduceFileImage
 import com.dicoding.motour.utils.uriToFile
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import com.dicoding.motour.presentation.landmark.LandmarkDetailActivity
 
 class PostScanActivity : AppCompatActivity() {
 
@@ -59,7 +53,6 @@ class PostScanActivity : AppCompatActivity() {
                 file.name,
                 requestFile
             )
-            Log.d("PostScanActivity", "file: $file")
             viewModel.getScanner(body).observe(this) { result ->
                 when (result) {
                     is Result.Loading -> {
@@ -69,7 +62,26 @@ class PostScanActivity : AppCompatActivity() {
                     is Result.Success -> {
                         showLoading(false)
                         Toast.makeText(this, "Success: ${result.data}", Toast.LENGTH_SHORT).show()
-                        Log.d("PostScanActivity", "Success: ${result.data}")
+                        val response = result.data
+                        val scanResult = response.code()
+                        val intent = Intent(this, ResultScanActivity::class.java)
+                        if(scanResult == 201) {
+                            val data = response.body()!!
+                            intent.apply {
+                                putExtra(ResultScanActivity.EXTRA_SCAN_ID, data.id)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_RESULT, data.result)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_RATE, data.rate)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_IMAGE, data.image)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_CREATED_AT, data.createdAt)
+                                putExtra(ResultScanActivity.EXTRA_SCAN_CODE, scanResult.toString())
+                            }
+                        } else {
+                            intent.apply {
+                                putExtra(ResultScanActivity.EXTRA_SCAN_CODE, scanResult.toString())
+                            }
+                        }
+                        startActivity(intent)
+                        finish()
                     }
 
                     is Result.Error -> {
