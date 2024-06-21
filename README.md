@@ -1,4 +1,4 @@
-![EducaTour Screen](https://github.com/EducaTour/MoTour/assets/101736662/e9cbe709-4d25-411a-a53b-6d8d84f4ff95)# Terralysis Mobile Development
+# EducaTour Mobile Development
 
 ## Architecture
 
